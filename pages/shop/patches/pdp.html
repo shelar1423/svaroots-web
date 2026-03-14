@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Svaroots | Patch Detail</title>
+    <link rel="stylesheet" href="../../../assets/css/shared-shell.css" />
+    <link rel="stylesheet" href="patches.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div data-global-nav-slot data-nav-root="../../../" data-nav-current="patches"></div>
+
+    <main class="patch-page patch-page--detail">
+      <a class="back-link" href="plp.html">Back to patch listing</a>
+
+      <section class="patch-detail-card">
+        <div class="patch-detail-media">
+          <img id="patch-image" src="../gifting/ProductImg_1.png" alt="Patch" />
+        </div>
+        <div class="patch-detail-content">
+          <p class="eyebrow">Patch Detail</p>
+          <h1 id="patch-title">Apatani</h1>
+          <p id="patch-desc">A handcrafted textile patch inspired by regional Indian traditions.</p>
+
+          <div class="price-row">
+            <span>Price</span>
+            <strong>₹700.00</strong>
+          </div>
+
+          <div class="actions">
+            <a class="btn btn-outline" href="plp.html">Browse More Patches</a>
+            <a class="btn btn-primary" href="../gifting/cart-summary.html">Add to Cart</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="patch-footer">
+      <a href="../../../swaroot%20career%20-%20java/career%20form.html">Join Our Team</a>
+      <span>Svaroots Inc. All rights reserved.</span>
+    </footer>
+
+    <script src="../../../assets/js/shared-shell.js"></script>
+    <script>
+      (function () {
+        var map = {
+          'apatani': {
+            name: 'Apatani',
+            img: '../gifting/ProductImg_1.png',
+            desc: 'Geometric tribal visual language adapted into a modern sneaker patch.'
+          },
+          'gond-art': {
+            name: 'Gond art',
+            img: '../gifting/ProductImg_2.png',
+            desc: 'Motif storytelling inspired by Gond folk art traditions.'
+          },
+          'paithani': {
+            name: 'Paithani',
+            img: '../gifting/ProductImg_3.png',
+            desc: 'Rich color expression inspired by the iconic Paithani weaving craft.'
+          },
+          'kalamkari': {
+            name: 'Kalamkari',
+            img: '../gifting/ProductImg_4.png',
+            desc: 'Hand-drawn narrative patterning translated into wearable patchwork.'
+          },
+          'shisha': {
+            name: 'Shisha',
+            img: '../gifting/ProductImg_5.png',
+            desc: 'Mirror-work inspired color accents with a contemporary finish.'
+          },
+          'rogan-art': {
+            name: 'Rogan art',
+            img: '../gifting/ProductImg_6.png',
+            desc: 'Free-flow painted visual style inspired by Rogan craftsmanship.'
+          },
+          'mysore-silk': {
+            name: 'Mysore silk',
+            img: '../gifting/ProductImg_7.png',
+            desc: 'Elegant silk-inspired detailing for premium custom builds.'
+          },
+          'gamusa': {
+            name: 'Gamusa',
+            img: '../gifting/ProductImg_8.png',
+            desc: 'Assam-inspired red-and-white craft motifs in a sneaker-ready patch format.'
+          },
+          'sozni': {
+            name: 'Sozni',
+            img: '../gifting/motif_2.png',
+            desc: 'Kashmiri embroidery-inspired floral patch style.'
+          },
+          'kasavu': {
+            name: 'Kasavu',
+            img: '../gifting/motif_4.png',
+            desc: 'Kerala-inspired gold-trim visual cues for minimal luxe styling.'
+          }
+        };
+
+        var params = new URLSearchParams(window.location.search);
+        var key = params.get('patch') || 'apatani';
+        var selected = map[key] || map['apatani'];
+
+        var title = document.getElementById('patch-title');
+        var image = document.getElementById('patch-image');
+        var desc = document.getElementById('patch-desc');
+
+        if (title) title.textContent = selected.name;
+        if (image) {
+          image.src = selected.img;
+          image.alt = selected.name + ' patch';
+        }
+        if (desc) desc.textContent = selected.desc;
+      })();
+    </script>
+  </body>
+</html>

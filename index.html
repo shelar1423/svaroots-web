@@ -1,0 +1,707 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Svaroots Homepage</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="pages/home/">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../../assets/css/shared-shell.css">
+        <link rel="stylesheet" href="homepage.css">
+        <link rel="stylesheet" href="community.css">
+    </head>
+    <body>
+        <div data-global-nav-slot data-nav-root="../../" data-nav-current="home"></div>
+
+  <!-- ═══════════════════════════════════════
+       HERO — full-width shoe image
+  ═══════════════════════════════════════ -->
+  <section class="hero">
+     <video
+      id="heroVideo"
+      class="hero__video"
+      autoplay
+      muted
+      playsinline
+      preload="auto"
+    >
+      <source src="HeroVideo.mp4" type="video/mp4" />
+      <!-- Fallback image if video is unsupported -->
+      <img
+        src="https://images.unsplash.com/photo-1758529374917-46889bf0a7d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1440"
+        alt="Svaroots custom sneaker"
+      />
+    </video>
+
+    <!-- Video controls overlay -->
+    <div class="hero__controls">
+      <button class="hero__ctrl-btn" id="heroPlayPause" aria-label="Play / Pause">
+        <!-- Pause icon (shown while playing) -->
+        <svg class="ctrl-icon ctrl-icon--pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+          <rect x="6" y="4" width="4" height="16" rx="1"/>
+          <rect x="14" y="4" width="4" height="16" rx="1"/>
+        </svg>
+        <!-- Play icon (shown while paused) -->
+        <svg class="ctrl-icon ctrl-icon--play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" style="display:none">
+          <polygon points="5,3 19,12 5,21"/>
+        </svg>
+      </button>
+      <button class="hero__ctrl-btn" id="heroMute" aria-label="Mute / Unmute">
+        <!-- Unmuted icon -->
+        <svg class="ctrl-icon ctrl-icon--sound" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+        </svg>
+        <!-- Muted icon -->
+        <svg class="ctrl-icon ctrl-icon--muted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+          <line x1="23" y1="9" x2="17" y2="15"/>
+          <line x1="17" y1="9" x2="23" y2="15"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Vertical "Join the Fam!" membership button -->
+    <a href="../careers/index.html" class="hero__join-btn" aria-label="Join the Fam">
+      <span>Join the Fam!</span>
+    </a>
+
+  <!-- Swipe hint — inside hero -->
+  <div class="swipe-hint">
+    <p class="swipe-hint__text">Swipe to Browse</p>
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <path d="M3.27 10.59C3.65 10.21 4.16 10 4.69 10s1.04.21 1.41.59L16 20.49l9.9-9.9a2 2 0 0 1 2.83 2.83L17.42 24.73A2 2 0 0 1 16 25.31a2 2 0 0 1-1.42-.58L3.27 13.42A2 2 0 0 1 3.27 10.59Z" fill="black"/>
+    </svg>
+  </div>
+  </section><!-- /hero -->
+
+  <!-- JS FOR VIDEO CONTROLS -->
+  <script>
+    (function () {
+      const video = document.getElementById('heroVideo');
+      const playPauseBtn = document.getElementById('heroPlayPause');
+      const muteBtn = document.getElementById('heroMute');
+ 
+      // Play once then pause
+      video.addEventListener('ended', function () {
+        video.pause();
+        updatePlayIcon(false);
+      });
+ 
+      // Play / Pause toggle
+      playPauseBtn.addEventListener('click', function () {
+        if (video.paused) {
+          video.play();
+          updatePlayIcon(true);
+        } else {
+          video.pause();
+          updatePlayIcon(false);
+        }
+      });
+ 
+      // Mute toggle
+      muteBtn.addEventListener('click', function () {
+        video.muted = !video.muted;
+        muteBtn.querySelector('.ctrl-icon--sound').style.display = video.muted ? 'none' : 'block';
+        muteBtn.querySelector('.ctrl-icon--muted').style.display = video.muted ? 'block' : 'none';
+      });
+ 
+      function updatePlayIcon(playing) {
+        playPauseBtn.querySelector('.ctrl-icon--pause').style.display = playing ? 'block' : 'none';
+        playPauseBtn.querySelector('.ctrl-icon--play').style.display  = playing ? 'none'  : 'block';
+      }
+ 
+      // Sync icon when video plays (e.g. autoplay)
+      video.addEventListener('play',  function () { updatePlayIcon(true);  });
+      video.addEventListener('pause', function () { updatePlayIcon(false); });
+    })();
+  </script>
+ 
+
+
+  <!-- ═══════════════════════════════════════
+       HOW TO CRAFT
+  ═══════════════════════════════════════ -->
+  <section class="craft-section">
+    <div class="craft-section__title-row">
+      <h2 class="craft-section__title">
+        How to <span class="craft-word">Craft</span> your own Svaroot ?
+      </h2>
+    </div>
+
+    <div class="craft-steps">
+      <!-- Step 1 -->
+      <div class="craft-step">
+        <div class="craft-step__visual">
+          <img class="craft-step__img craft-step__img--default" src="Step 1.png" alt="Choose base"/>
+          <img class="craft-step__img craft-step__img--hover"   src="Step 1-selected.png" alt="Choose base selected"/>
+        </div>
+        <p class="craft-step__label">Choose your perfect base</p>
+      </div>
+      <!-- Step 2 -->
+      <div class="craft-step">
+        <div class="craft-step__visual">
+          <img class="craft-step__img craft-step__img--default" src="Step 2.png" alt="Craft patch"/>
+          <img class="craft-step__img craft-step__img--hover"   src="Step 2-selected.png" alt="Craft patch selected"/>
+        </div>
+        <p class="craft-step__label">Craft Your Patch</p>
+      </div>
+      <!-- Step 3 -->
+      <div class="craft-step">
+        <div class="craft-step__visual">
+          <img class="craft-step__img craft-step__img--default" src="Step 3.png" alt="Wear creation"/>
+          <img class="craft-step__img craft-step__img--hover"   src="Step 3-selected.png" alt="Wear creation selected"/>
+        </div>
+        <p class="craft-step__label">Wear Your Creation</p>
+      </div>
+    </div>
+
+    <div class="craft-section__cta">
+      <a href="../build/index.html" class="btn btn--primary">Create Your Pair</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       SHOE FEATURE / MATERIAL CAROUSEL
+  ═══════════════════════════════════════ -->
+  <section class="feature" id="featureSection">
+
+    <!-- LEFT: stacked photos panel -->
+    <div class="feature__photos">
+      <!-- Slide 1 -->
+      <div class="feature__photo-set">
+        <img src="big image 01.png" alt="Lifestyle" class="feature__photo-main"/>
+      </div>
+      <!-- Slide 2 -->
+      <div class="feature__photo-set">
+        <img src="big image 02.png" alt="Lifestyle 2" class="feature__photo-main"/>
+      </div>
+    </div>
+    <!-- Overlay image: positioned relative to .feature, overlaps both columns -->
+    <img src="image 01.png" alt="Textile detail" class="feature__photo-overlay"/>
+
+    <!-- RIGHT: detail panel -->
+    <div class="feature__detail">
+      <img src="01.png" alt="01" class="feature__number-img" id="featNumImg"/>
+      <h3 class="feature__subtitle" id="featTitle">Woven Nylon Textile</h3>
+
+      <!-- Shoe with tapper dots -->
+      <div class="feature__shoe-wrap">
+        <img src="Knowtheshoe.png" alt="Sneaker" class="feature__shoe" id="featShoe"/>
+        <button class="feature__tapper active" style="top:42%;left:20%" data-slide="0">
+          <img src="tapper default.png"   class="tapper-default"  alt=""/>
+          <img src="tapper selected.png"  class="tapper-hover"    alt=""/>
+        </button>
+        <button class="feature__tapper" style="top:55%;left:68%" data-slide="1">
+          <img src="tapper default.png"   class="tapper-default"  alt=""/>
+          <img src="tapper selected.png"  class="tapper-hover"    alt=""/>
+        </button>
+      </div>
+
+      <p class="feature__desc" id="featDesc">Durable, breathable woven nylon that holds vibrant prints while staying lightweight and flexible.</p>
+
+      <!-- Nav -->
+      <div class="feature__nav">
+        <button class="feature__arrow" id="featPrev" aria-label="Previous">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M13 4 7 10l6 6" stroke="#151515" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="feature__dots">
+          <span class="dot" data-slide="0"></span>
+          <span class="dot" data-slide="1"></span>
+        </div>
+        <button class="feature__arrow" id="featNext" aria-label="Next">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M7 4l6 6-6 6" stroke="#151515" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function() {
+      var slides = [
+        { numImg: '01.png',  overlay: 'image 01.png', title: 'Woven Nylon Textile',  desc: 'Durable, breathable woven nylon that holds vibrant prints while staying lightweight and flexible.' },
+        { numImg: '02.png',  overlay: 'image 02.png', title: 'Rubber Outsole',        desc: 'High-grip rubber outsole engineered for traction on any surface, indoors or out.' }
+      ];
+
+      var current   = 0;
+      var photoSets = document.querySelectorAll('.feature__photo-set');
+      var dots      = document.querySelectorAll('.feature__dots .dot');
+      var tappers   = document.querySelectorAll('.feature__tapper');
+      var titleEl   = document.getElementById('featTitle');
+      var descEl    = document.getElementById('featDesc');
+      var numImgEl  = document.getElementById('featNumImg');
+      var overlayEl = document.querySelector('.feature__photo-overlay');
+
+      function goTo(n) {
+        photoSets[current].classList.remove('feature__photo-set--active');
+        dots[current].classList.remove('dot--on');
+        tappers[current] && tappers[current].classList.remove('active');
+
+        current = (n + slides.length) % slides.length;
+
+        photoSets[current].classList.add('feature__photo-set--active');
+        dots[current].classList.add('dot--on');
+        tappers[current] && tappers[current].classList.add('active');
+
+        titleEl.textContent  = slides[current].title;
+        descEl.textContent   = slides[current].desc;
+        numImgEl.src         = slides[current].numImg;
+        overlayEl.src        = slides[current].overlay;
+      }
+
+      /* Arrows */
+      document.getElementById('featNext').addEventListener('click', function() { goTo(current + 1); });
+      document.getElementById('featPrev').addEventListener('click', function() { goTo(current - 1); });
+
+      /* Dots */
+      dots.forEach(function(d) {
+        d.addEventListener('click', function() { goTo(parseInt(d.dataset.slide)); });
+      });
+
+      /* Tappers — click only */
+      tappers.forEach(function(btn, i) {
+        btn.addEventListener('click', function() { goTo(i); });
+      });
+
+      /* Init slide 0 as active — set everything directly without remove/add cycle */
+      current = 0;
+      photoSets[0].classList.add('feature__photo-set--active');
+      dots[0].classList.add('dot--on');
+      tappers[0].classList.add('active');
+      titleEl.textContent = slides[0].title;
+      descEl.textContent  = slides[0].desc;
+      numImgEl.src        = slides[0].numImg;
+      overlayEl.src       = slides[0].overlay;
+    })();
+  </script>
+
+
+  <!-- ═══════════════════════════════════════
+       NEW MOOD, NEW PATCH
+  ═══════════════════════════════════════ -->
+  <section class="patches">
+    <div class="patches__header">
+      <h2 class="patches__title">New Mood, New Patch</h2>
+      <a href="../shop/gifting/plp.html" class="patches__viewall">View all</a>
+    </div>
+    <div class="patches__grid">
+
+      <!-- Card 1: Rogan Art -->
+      <article class="patch-card">
+        <div class="patch-card__img-wrap">
+          <img src="product1.png" alt="Rogan Art patch"/>
+        </div>
+        <h3 class="patch-card__name">Rogan Art</h3>
+        <p class="patch-card__desc">Traditional hand painted textile from Gujrat</p>
+        <a href="../shop/gifting/pdp.html" class="btn btn--primary patch-card__btn">Buy Shoes</a>
+      </article>
+
+      <!-- Card 2: Gamusa -->
+      <article class="patch-card">
+        <div class="patch-card__img-wrap">
+          <img src="product2.png" alt="Gamusa patch"/>
+        </div>
+        <h3 class="patch-card__name">Gamusa</h3>
+        <p class="patch-card__desc">Handwoven cotton cloth from Assam</p>
+        <a href="../shop/gifting/pdp.html" class="btn btn--primary patch-card__btn">Buy Shoes</a>
+      </article>
+
+      <!-- Card 3: Sozni -->
+      <article class="patch-card">
+        <div class="patch-card__img-wrap">
+          <img src="product3.png" alt="Sozni patch"/>
+        </div>
+        <h3 class="patch-card__name">Sozni</h3>
+        <p class="patch-card__desc">Fine hand embroidery style from Kashmir</p>
+        <a href="../shop/gifting/pdp.html" class="btn btn--primary patch-card__btn">Buy Shoes</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       HANDS BEHIND THE CRAFT
+       4 rows, each with image strips + a text word
+  ═══════════════════════════════════════ -->
+  <section class="craft-mosaic">
+
+    <!-- ROW 1: img | HANDS | img | img -->
+    <div class="mosaic-row mosaic-row--1">
+      <div class="mosaic-img mosaic-img--top-left">
+        <img src="craft1.png" alt="Artisan craft"/>
+      </div>
+      <div class="mosaic-word mosaic-word--hands">HANDS</div>
+      <div class="mosaic-img mosaic-img--middle">
+        <img src="craft2.png" alt="Craft detail"/>
+      </div>
+      <div class="mosaic-img mosaic-img--top-right">
+        <img src="craft3.png" alt="Textile craft"/>
+      </div>
+    </div>
+
+    <!-- ROW 2: img | img | BEHIND | img -->
+    <div class="mosaic-row mosaic-row--2">
+      <div class="mosaic-img mosaic-img--left-edge">
+        <img src="craft4.png" alt="Block printing"/>
+      </div>
+      <div class="mosaic-img mosaic-img--middle">
+        <img src="craft5.png" alt="Embroidery"/>
+      </div>
+      <div class="mosaic-word mosaic-word--behind">BEHIND</div>
+      <div class="mosaic-img mosaic-img--right-edge">
+        <img src="craft6.png" alt="Weave detail"/>
+      </div>
+    </div>
+
+    <!-- ROW 3: img | THE | img | img -->
+    <div class="mosaic-row mosaic-row--3">
+      <div class="mosaic-img mosaic-img--left-edge">
+        <img src="craft7.png" alt="Artisan hands"/>
+      </div>
+      <div class="mosaic-word mosaic-word--the">THE</div>
+      <div class="mosaic-img mosaic-img--middle">
+        <img src="craft8.png" alt="Craft work"/>
+      </div>
+      <div class="mosaic-img mosaic-img--right-edge">
+        <img src="craft9.png" alt="Textile detail"/>
+      </div>
+    </div>
+
+    <!-- ROW 4: img | img | CRAFT | img -->
+    <div class="mosaic-row mosaic-row--4">
+      <div class="mosaic-img mosaic-img--bottom-left">
+        <img src="craft10.png" alt="Weaving craft"/>
+      </div>
+      <div class="mosaic-img mosaic-img--middle">
+        <img src="craft11.png" alt="Hand craft"/>
+      </div>
+      <div class="mosaic-word mosaic-word--craft">CRAFT</div>
+      <div class="mosaic-img mosaic-img--bottom-right">
+        <img src="craft12.png" alt="Indian craft"/>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       THREADS OF INDIA
+  ═══════════════════════════════════════ -->
+  <section class="threads">
+
+    <!-- Logo + Title (top-left) -->
+    <div class="threads__left">
+      <div class="threads__logo-row">
+        <img id="threadsSwaLogo" class="threads__swa-logo" src="maharashtra logo.png" alt="Sva logo"/>
+      </div>
+      <h2 class="threads__title">Threads of India</h2>
+    </div>
+
+
+    <!-- State info card (absolutely positioned over map, left side) -->
+    <div class="threads__card">
+      <p class="threads__state" id="threadsState">MAHARASHTRA</p>
+      <h3 class="threads__craft-name" id="threadsCraftName">Paithani</h3>
+      <p class="threads__craft-desc" id="threadsCraftDesc">A luxurious silk saree woven in Paithan, Maharashtra, celebrated for its oblique square designs and vibrant peacock motifs.</p>
+      <p class="threads__craft-tags" id="threadsCraftTags">Handcrafted · Cultural Legacy · Limited Edition</p>
+      <button class="btn btn--gold" id="threadsCraftBtn">Design with Paithani</button>
+      <a href="../roots/artisans/index.html" class="threads__explore-link">Explore patch collection</a>
+    </div>
+
+    <!-- Selector — top-right of section -->
+    <div class="threads__selector">
+      <label class="threads__selector-label">Explore crafts by state</label>
+      <div class="threads__custom-select" id="threadsCustomSelect">
+        <div class="threads__select-trigger" id="threadsSelectTrigger">
+          <span id="threadsSelectText">Select state</span>
+          <svg class="threads__chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M4 6l4 4 4-4" stroke="#070100" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="threads__dropdown" id="threadsDropdown">
+          <input type="text" class="threads__search-input" id="threadsSearchInput" placeholder="Search State" autocomplete="off"/>
+          <ul class="threads__state-list" id="threadsStateList"></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map — centred behind everything -->
+    <div class="threads__right">
+      <div class="threads__map-wrap">
+        <img src="maharashtra.png" alt="Map of India" class="threads__map-img" id="threadsMapImg"/>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       REVIEWS
+  ═══════════════════════════════════════ -->
+  <section class="reviews">
+    <!-- Blurred colorful background -->
+    <div class="reviews__bg">
+      <img
+        src="Reviews.png"
+        alt=""
+        class="reviews__bg-img"
+      />
+    </div>
+
+    <!-- Floating big words -->
+    <span class="reviews__big-word reviews__big-word--amazing">AMAZING</span>
+    <span class="reviews__big-word reviews__big-word--lovely">LOVELY</span>
+    <span class="reviews__big-word reviews__big-word--best">BEST</span>
+
+    <!-- Review card -->
+    <div class="reviews__card">
+      <!-- Stars -->
+      <div class="reviews__stars">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#E0B23F"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.4l-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#E0B23F"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.4l-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#E0B23F"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.4l-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#E0B23F"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.4l-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E0B23F" stroke-width="1.5"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.4l-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z"/></svg>
+      </div>
+      <blockquote class="reviews__quote">
+        "This product is simply <strong>AMAZING</strong>! It's the <strong>BEST</strong> thing I have ever purchased.
+        Delivery was fast and the quality was <strong>LOVELY</strong>. Highly recommended."
+      </blockquote>
+      <p class="reviews__author">Yashika M.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════ FOOTER ══════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg width="145" height="48" viewBox="0 0 145 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <path d="M28.102 17.7813L28.1643 17.8133C28.0197 17.9588 27.8739 18.1054 27.7246 18.2557C27.7246 18.1007 27.841 18.0155 27.9444 17.9079C27.995 17.8641 28.0467 17.8216 28.1008 17.7813H28.102Z" fill="white"/>
+             <path d="M54.6457 25.7322C55.0078 26.2787 55.2794 26.8713 55.4604 27.5088C55.6415 28.1286 55.732 28.8111 55.732 29.5587C55.732 31.1614 55.2065 32.4731 54.1567 33.4939C53.1069 34.5135 51.7761 35.0245 50.1643 35.0245C48.2633 35.0245 46.7515 34.3503 45.6288 33.003C44.5061 31.6546 43.9453 29.9514 43.9453 27.8932C44.3074 27.7111 44.7153 27.5561 45.1679 27.4284C45.6382 27.3007 46.0638 27.2285 46.4447 27.2096C46.427 29.0311 46.7256 30.4706 47.3405 31.5269C47.9741 32.5654 48.8523 33.0846 49.975 33.0846C50.8262 33.0846 51.4963 32.8114 51.9853 32.2649C52.492 31.7185 52.7459 30.9899 52.7459 30.0791C52.7459 29.2227 52.5379 28.4492 52.1217 27.756C51.7055 27.0452 50.7909 26.1616 49.379 25.1053C48.4914 24.4311 47.8495 23.9036 47.451 23.5204C47.0525 23.1194 46.7092 22.7101 46.4188 22.2902C46.0391 21.7438 45.7581 21.1512 45.5771 20.5136C45.396 19.8584 45.3055 19.1569 45.3055 18.4094C45.3055 16.77 45.7946 15.4583 46.7715 14.4742C47.7672 13.4723 49.0886 12.9708 50.7368 12.9708C52.2393 12.9708 53.416 13.3812 54.2672 14.2009C55.136 15.0206 55.7426 16.3596 56.087 18.2178C55.7978 18.3999 55.4628 18.5454 55.0819 18.6554C54.7022 18.7465 54.1943 18.8198 53.5606 18.8742C53.3972 17.5081 53.0904 16.524 52.6378 15.9231C52.1852 15.3033 51.5245 14.9946 50.6557 14.9946C49.9139 14.9946 49.3425 15.2406 48.9452 15.7327C48.5467 16.2247 48.348 16.9344 48.348 17.8641C48.348 18.7938 48.5561 19.5946 48.9722 20.3232C49.4072 21.0341 50.3301 21.9176 51.742 22.9739C52.6108 23.6292 53.2444 24.1579 53.6429 24.5589C54.0415 24.9409 54.3765 25.3336 54.6481 25.7334L54.6457 25.7322ZM68.3169 19.9128C67.6833 22.4452 66.9767 24.7304 66.1985 26.7708C65.4379 28.7934 64.4245 31.0242 63.1572 33.4655C62.9397 33.5566 62.6411 33.6205 62.2613 33.6571C61.8993 33.6938 61.4102 33.7115 60.7954 33.7115C60.2887 31.0336 59.6727 28.4835 58.9485 26.0611C58.2243 23.6386 57.392 21.3061 56.4503 19.0659C56.8665 18.847 57.3379 18.6744 57.8622 18.5466C58.3877 18.4011 58.9308 18.3195 59.4916 18.3006C60.0712 19.8856 60.5955 21.6338 61.0669 23.5464C61.556 25.459 62.045 27.7631 62.5329 30.46C63.33 28.5473 63.9989 26.6158 64.542 24.6677C65.1028 22.7184 65.4931 20.8874 65.7094 19.1759C66.1444 19.2303 66.5782 19.3214 67.0132 19.4491C67.4658 19.5768 67.9008 19.7318 68.3169 19.9139V19.9128ZM80.3223 24.5033C80.3223 25.724 80.1589 27.3456 79.8332 29.367C79.5076 31.3707 79.1185 33.2112 78.6658 34.8861C78.3038 34.8861 77.924 34.8494 77.5255 34.7773C77.127 34.7228 76.7378 34.6412 76.3581 34.5312C76.4122 34.2213 76.4663 33.9386 76.5215 33.6843C76.5756 33.4288 76.6297 33.2017 76.6849 33.0007C76.2864 33.2561 75.8526 33.4466 75.3812 33.5743C74.9109 33.7021 74.4125 33.7659 73.887 33.7659C72.5832 33.7659 71.5334 33.4288 70.7363 32.7546C69.9393 32.0627 69.5419 31.1425 69.5419 29.9951C69.5419 28.7744 70.0486 27.8542 71.0632 27.2356C72.0765 26.6158 73.5707 26.3071 75.5446 26.3071C75.8702 26.3071 76.1688 26.3165 76.4404 26.3343C76.7296 26.3343 77.0835 26.3438 77.4996 26.3615V25.2142C77.4996 23.6836 77.3362 22.5824 77.0106 21.9082C76.6849 21.234 76.1594 20.8969 75.4353 20.8969C74.7111 20.8969 74.068 21.2434 73.5613 21.9354C73.0723 22.6273 72.8101 23.5204 72.7737 24.6133C72.1224 24.5589 71.5875 24.4134 71.1713 24.1756C70.7551 23.9391 70.4471 23.6197 70.2485 23.2187C70.4836 22.0714 71.1172 21.0968 72.1494 20.2948C73.1992 19.4929 74.3948 19.0931 75.7339 19.0931C77.2551 19.0931 78.3955 19.5485 79.1561 20.4592C79.9343 21.37 80.3235 22.7184 80.3235 24.5033H80.3223ZM72.4469 30.1323C72.4469 30.7332 72.6373 31.2158 73.017 31.5801C73.3967 31.9444 73.9128 32.1266 74.5653 32.1266C75.0179 32.1266 75.4435 32.0627 75.842 31.9349C76.2582 31.7895 76.6391 31.5884 76.9824 31.3341C77.1093 30.6599 77.2093 30.0412 77.281 29.4759C77.3539 28.9117 77.3985 28.3368 77.4173 27.7549C75.7515 27.7004 74.5018 27.8731 73.6695 28.2741C72.8548 28.6562 72.4469 29.276 72.4469 30.1323ZM85.9053 27.2084C85.9593 28.2102 86.0499 29.276 86.1768 30.4056C86.3038 31.5162 86.4672 32.7097 86.6659 33.9848C86.4119 34.0758 86.1404 34.1397 85.8512 34.1764C85.5796 34.2131 85.2986 34.2225 85.0094 34.2036C84.8284 34.2036 84.665 34.1941 84.5204 34.1764C84.3758 34.1586 84.2218 34.122 84.0584 34.0676C83.6058 31.7717 83.2883 29.3316 83.1085 26.7447C82.9451 24.1402 82.9368 21.6349 83.0814 19.2303C83.2989 19.1569 83.5435 19.1025 83.815 19.0659C84.0866 19.0292 84.3852 19.0115 84.712 19.0115C84.9471 19.0115 85.1917 19.0292 85.4456 19.0659C85.6995 19.1025 85.9711 19.1664 86.2603 19.2575C86.1874 19.7495 86.1157 20.2593 86.0428 20.788C85.9887 21.2978 85.9429 21.8538 85.9064 22.4546C86.3226 21.1618 86.8751 20.1316 87.5629 19.3675C88.2506 18.6022 88.9571 18.2201 89.6813 18.2201C90.4784 18.2201 91.0756 18.53 91.4741 19.1487C91.8903 19.7495 92.0984 20.652 92.0984 21.8538C92.0984 22.0537 92.089 22.2725 92.0713 22.5091C92.0537 22.7456 92.0349 22.9822 92.0173 23.2199C91.7457 23.3287 91.4024 23.4021 90.9851 23.4387C90.5865 23.4754 90.1069 23.4837 89.5461 23.466C89.5826 23.2105 89.6096 22.9739 89.6272 22.7551C89.6461 22.5363 89.6543 22.3174 89.6543 22.0998C89.6543 21.5533 89.5814 21.1429 89.4368 20.8697C89.3098 20.5787 89.1112 20.432 88.8396 20.432C88.26 20.432 87.6992 21.0518 87.1561 22.2902C86.6306 23.5109 86.2144 25.1503 85.9064 27.2084H85.9053ZM93.013 27.3716C93.013 24.9669 93.602 22.9999 94.7788 21.4694C95.9556 19.9388 97.4674 19.1747 99.3143 19.1747C100.799 19.1747 101.966 19.7034 102.818 20.7597C103.669 21.7982 104.094 23.2282 104.094 25.0497C104.094 27.7087 103.534 29.904 102.411 31.6345C101.307 33.3472 99.821 34.2024 97.9576 34.2024C96.4364 34.2024 95.2326 33.5743 94.345 32.317C93.4574 31.0597 93.0142 29.412 93.0142 27.3716H93.013ZM101.161 26.2787C101.161 24.5116 100.953 23.2093 100.537 22.3718C100.138 21.5155 99.5235 21.0873 98.69 21.0873C97.9118 21.0873 97.2417 21.661 96.6809 22.8083C96.119 23.9379 95.8392 25.3313 95.8392 26.9884C95.8392 28.4823 96.0743 29.7479 96.5457 30.7864C97.0348 31.806 97.6861 32.317 98.5008 32.317C99.2249 32.317 99.8492 31.7244 100.375 30.5404C100.9 29.3387 101.162 27.9169 101.162 26.2775L101.161 26.2787ZM106.141 27.3716C106.141 24.9669 106.73 22.9999 107.907 21.4694C109.084 19.9388 110.595 19.1747 112.442 19.1747C113.927 19.1747 115.095 19.7034 115.946 20.7597C116.797 21.7982 117.222 23.2282 117.222 25.0497C117.222 27.7087 116.662 29.904 115.539 31.6345C114.435 33.3472 112.95 34.2024 111.086 34.2024C109.564 34.2024 108.361 33.5743 107.473 32.317C106.585 31.0597 106.142 29.412 106.142 27.3716H106.141ZM114.289 26.2787C114.289 24.5116 114.081 23.2093 113.665 22.3718C113.266 21.5155 112.652 21.0873 111.818 21.0873C111.04 21.0873 110.37 21.661 109.809 22.8083C109.247 23.9379 108.967 25.3313 108.967 26.9884C108.967 28.4823 109.202 29.7479 109.674 30.7864C110.163 31.806 110.814 32.317 111.629 32.317C112.353 32.317 112.977 31.7244 113.503 30.5404C114.028 29.3387 114.29 27.9169 114.29 26.2775L114.289 26.2787ZM125.478 28.1097C125.84 28.1464 126.192 28.2374 126.537 28.3829C126.899 28.5107 127.225 28.6656 127.515 28.8478C127.478 30.3417 127.153 31.5257 126.537 32.3998C125.922 33.2562 125.061 33.6843 123.957 33.6843C122.673 33.6843 121.685 33.029 120.997 31.7173C120.31 30.3878 119.965 28.4752 119.965 25.9794C119.965 25.142 119.983 24.3306 120.019 23.5476C120.073 22.7456 120.146 21.9721 120.237 21.2245C119.802 21.1512 119.422 21.0885 119.096 21.0329C118.788 20.9785 118.507 20.9241 118.255 20.8685C118.255 20.5586 118.291 20.2487 118.363 19.94C118.434 19.6123 118.526 19.3391 118.634 19.1203C118.906 19.1936 119.195 19.2563 119.503 19.3119C119.811 19.3663 120.137 19.4124 120.481 19.4491C120.572 18.8482 120.68 18.2474 120.807 17.6453C120.934 17.0444 121.069 16.4518 121.214 15.8687C121.847 15.9054 122.417 15.9598 122.924 16.0331C123.431 16.1064 123.866 16.2058 124.228 16.3335C124.083 16.7712 123.939 17.2715 123.794 17.8369C123.667 18.4011 123.54 19.0115 123.414 19.6679C124.121 19.6857 124.817 19.6857 125.506 19.6679C126.211 19.6313 126.891 19.5768 127.542 19.5035C127.542 19.759 127.515 20.0405 127.461 20.3504C127.407 20.6414 127.324 20.9335 127.216 21.2245C126.565 21.2978 125.885 21.3523 125.18 21.3889C124.492 21.4256 123.813 21.4351 123.143 21.4161C123.016 22.2536 122.916 23.0922 122.844 23.9296C122.79 24.7671 122.763 25.5785 122.763 26.3615C122.763 28.1653 122.881 29.5315 123.116 30.46C123.351 31.3707 123.705 31.8261 124.175 31.8261C124.591 31.8261 124.909 31.5257 125.125 30.9248C125.342 30.305 125.46 29.367 125.478 28.1109V28.1097ZM135.001 25.7866C136.378 26.7518 137.283 27.581 137.717 28.2729C138.152 28.9471 138.369 29.703 138.369 30.5404C138.369 31.8332 137.917 32.9084 137.011 33.7648C136.106 34.6211 134.966 35.0493 133.589 35.0493C132.213 35.0493 131.118 34.5845 130.249 33.6559C129.398 32.7085 128.973 31.5068 128.973 30.0495C129.262 29.9218 129.606 29.8307 130.005 29.7763C130.403 29.703 130.775 29.6758 131.118 29.6947C131.082 30.8243 131.282 31.7173 131.715 32.3726C132.168 33.0101 132.792 33.3295 133.589 33.3295C134.204 33.3295 134.685 33.1379 135.028 32.7558C135.39 32.3548 135.571 31.8178 135.571 31.1436C135.571 30.5794 135.4 30.0507 135.055 29.5587C134.73 29.0666 133.996 28.4196 132.856 27.6188C131.48 26.6347 130.575 25.7878 130.14 25.0781C129.705 24.3673 129.488 23.5748 129.488 22.7007C129.488 21.48 129.877 20.4971 130.655 19.7495C131.452 19.0032 132.511 18.6294 133.833 18.6294C135.154 18.6294 136.105 18.976 136.847 19.6679C137.589 20.3421 138.087 21.3889 138.341 22.8107C138.033 22.9928 137.689 23.13 137.309 23.2211C136.947 23.3122 136.512 23.3855 136.005 23.4399C135.842 22.4014 135.589 21.6551 135.245 21.1997C134.9 20.7265 134.43 20.4888 133.833 20.4888C133.362 20.4888 132.981 20.6532 132.692 20.9808C132.402 21.2907 132.257 21.7189 132.257 22.2654C132.257 22.8119 132.429 23.3583 132.773 23.8504C133.118 24.3424 133.86 24.9894 135 25.7902L135.001 25.7866Z" fill="white"/>
+             <path d="M21.5078 6.74682C27.293 6.24767 30.205 8.2348 34.2667 12.4125C38.2744 16.5358 37.9017 20.0003 35.6081 25.4839C33.4626 30.6137 38.0028 34.4461 33.3768 38.5446C29.6325 41.5513 27.5575 41.3845 22.8069 41.2863C18.2079 41.1917 14.7316 40.1473 11.1213 37.2778C7.12655 34.1007 6.52699 31.728 6.64338 26.6028C6.75859 21.5557 8.43971 19.5236 11.7385 15.7232C15.4146 11.4864 15.9413 7.22704 21.5078 6.74682Z" stroke="white"/>
+             <path d="M24.2109 9.61517C24.2336 9.61517 24.2567 9.61477 24.2803 9.61399C25.9202 9.59151 27.4532 10.1321 28.7347 11.1706C28.7519 11.184 28.7691 11.1978 28.7864 11.212C30.049 12.2221 30.8954 13.6817 31.4068 15.2028C31.4397 15.3022 31.475 15.4003 31.5115 15.4973C32.0099 16.8209 32.3732 18.387 32.3791 19.8063C32.3791 19.8371 32.3791 19.869 32.3791 19.901C32.3791 20.0003 32.3791 20.1009 32.3791 20.2002C32.3791 20.2341 32.3791 20.2684 32.3791 20.3031C32.3791 20.8011 32.3626 21.2837 32.2768 21.7757C32.2662 21.842 32.2556 21.9082 32.245 21.9744C32.1028 22.8355 31.8265 23.7191 31.3034 24.4264C31.2838 24.4532 31.2642 24.4804 31.2446 24.508C30.5333 25.4496 29.4036 25.7879 28.295 25.9866C28.2338 25.9972 28.1715 26.009 28.1104 26.0209C27.8929 26.0599 27.6837 26.0777 27.4626 26.0788C27.4297 26.0788 27.3956 26.0788 27.3615 26.0788C27.2534 26.0788 27.1452 26.0788 27.0371 26.0788C26.9995 26.0788 26.963 26.0788 26.9242 26.0788C26.4093 26.0788 25.9003 26.0575 25.3877 25.996C25.3618 25.9929 25.3356 25.9897 25.3089 25.9866C24.5166 25.8896 23.7301 25.7334 22.9495 25.5702C22.9107 25.5619 22.8719 25.5537 22.8307 25.5454C22.1359 25.3999 21.4482 25.239 20.7628 25.0557C20.7299 25.0474 20.697 25.038 20.6629 25.0285C20.476 24.9776 20.2902 24.9232 20.1045 24.8664C20.0669 24.8546 20.0292 24.8428 19.9905 24.831C19.8823 24.7978 19.7753 24.7635 19.6683 24.7292C19.626 24.7162 19.5837 24.702 19.5414 24.689C19.258 24.5991 18.9912 24.4927 18.7255 24.3614C18.7008 24.3496 18.6773 24.3377 18.6526 24.3259C17.8896 23.9592 17.2454 23.4825 16.9256 22.6699C16.6447 21.81 16.868 20.8425 17.2525 20.0512C17.2936 19.9696 17.3359 19.888 17.3794 19.8063C17.4206 19.7295 17.457 19.6502 17.4946 19.571C17.7274 19.1026 18.0154 18.6626 18.3176 18.2379C18.3317 18.2178 18.3469 18.1965 18.3611 18.1764C18.6091 17.8287 18.8748 17.4975 19.1522 17.1734C19.1687 17.1545 19.1852 17.1344 19.2028 17.1142C19.3051 16.9948 19.4121 16.8824 19.5237 16.7724C19.5606 16.7353 19.6021 16.6872 19.6483 16.6281C19.7295 16.5335 19.8141 16.4554 19.9082 16.375C19.9869 16.3064 20.0633 16.2342 20.1409 16.1633C20.3232 15.9953 20.516 15.8427 20.7111 15.6913C20.7593 15.6535 20.8075 15.6156 20.8557 15.5778C21.7762 14.8586 22.933 14.3086 24.1204 14.4198C24.9292 14.5239 25.6851 14.8066 26.3164 15.3353C26.3458 15.3601 26.3752 15.3838 26.4046 15.4086C26.8643 15.8084 27.1652 16.3158 27.3827 16.8812C27.3921 16.9037 27.4015 16.9274 27.4121 16.951C27.492 17.1426 27.5473 17.3319 27.5931 17.5341C27.6002 17.5625 27.6061 17.5909 27.6131 17.6205C27.8388 18.5963 27.726 19.8099 27.2287 20.6887C27.1981 20.7349 27.1652 20.781 27.1323 20.8271C27.1143 20.8531 27.0959 20.8799 27.077 20.9075C26.6738 21.4552 25.9414 21.7391 25.2889 21.842C24.2615 21.978 23.0576 21.8633 22.1947 21.2364C22.0971 21.1595 22.009 21.0779 21.9243 20.9856C21.9067 20.9679 21.8891 20.9501 21.8714 20.9324C21.7174 20.7692 21.6281 20.5965 21.5481 20.3859C21.5364 20.3587 21.5246 20.3303 21.5129 20.3031C21.4729 20.1505 21.4741 20.0027 21.4753 19.8454C21.4753 19.8123 21.4753 19.7803 21.4753 19.7472C21.4788 19.5166 21.4988 19.3096 21.5787 19.0919C21.5881 19.0623 21.5987 19.0328 21.6093 19.0032C21.8397 18.387 22.2441 17.8653 22.8413 17.5815C23.1117 17.4703 23.3903 17.3674 23.6807 17.4513C23.8312 17.527 23.9193 17.6146 23.9946 17.7672C24.024 17.9351 23.9946 18.0664 23.9005 18.2095C23.7889 18.3302 23.7066 18.3739 23.5479 18.413C23.2669 18.4816 23.0235 18.6247 22.866 18.8731C22.6567 19.2469 22.4827 19.6407 22.6027 20.0808C22.7508 20.3765 23.1141 20.5101 23.4044 20.6142C24.1968 20.8638 25.1161 20.8685 25.8709 20.503C26.1636 20.3433 26.2741 20.1636 26.3787 19.8525C26.3893 19.8205 26.4011 19.7886 26.4116 19.7555C26.6338 19.0742 26.6832 18.2013 26.441 17.5164C26.4328 17.4916 26.4234 17.4655 26.4152 17.4395C26.1389 16.6423 25.6792 16.1384 24.9245 15.767C24.2626 15.4784 23.482 15.4571 22.8107 15.7197C22.7872 15.7292 22.7637 15.7386 22.7402 15.7481C22.7175 15.7568 22.6948 15.7658 22.672 15.7753C22.1477 15.9858 21.661 16.3265 21.2342 16.6955C21.2013 16.7227 21.1684 16.7499 21.1367 16.7783C20.7123 17.1355 20.2985 17.501 19.954 17.9375C19.8893 18.0179 19.8212 18.0924 19.7506 18.167C19.5531 18.3858 19.3921 18.6294 19.2275 18.8731C19.2098 18.8991 19.1922 18.9251 19.1734 18.9512C18.5707 19.8264 18.1553 20.7727 17.9273 21.7899C17.9273 21.8219 17.9273 21.8538 17.9273 21.8857C17.9355 22.2571 18.0095 22.5091 18.2729 22.7788C18.2976 22.8024 18.3223 22.8249 18.3481 22.8497C18.3677 22.8687 18.3877 22.888 18.4081 22.9077C19.6378 23.9663 21.9514 24.2999 23.5114 24.5412C23.6631 24.5648 23.81 24.5932 23.9581 24.6322C24.1686 24.6867 24.3802 24.7245 24.5953 24.76C24.6153 24.7635 24.6365 24.7671 24.6576 24.7706C25.0526 24.8345 25.4488 24.8747 25.8485 24.9055C25.8709 24.9067 25.892 24.909 25.9144 24.9102C25.9731 24.9149 26.0331 24.9197 26.0919 24.9232C26.1585 24.9295 26.2169 24.9382 26.267 24.9492C26.387 24.9717 26.5057 24.9705 26.628 24.9717C26.6554 24.9717 26.6828 24.9717 26.7103 24.9717C26.7984 24.9717 26.8854 24.9729 26.9736 24.9729C27.003 24.9729 27.0335 24.9729 27.0641 24.9729C27.5179 24.9729 27.947 24.9445 28.389 24.8369C28.4384 24.8262 28.4866 24.8156 28.536 24.8049C28.6653 24.7765 28.7934 24.7446 28.9216 24.7103C28.9568 24.7008 28.9909 24.6926 29.0274 24.6831C29.6552 24.5069 30.2053 24.1449 30.5592 23.5843C31.2998 22.2489 31.4115 20.5515 31.2117 19.0612C31.2078 19.0336 31.2038 19.0056 31.1999 18.9772C31.1646 18.7158 31.1235 18.4556 31.0706 18.1965C31.0541 18.1125 31.0377 18.0274 31.0224 17.9434C30.8496 17.0184 30.5956 16.0828 30.2383 15.2111C30.2206 15.1673 30.2042 15.1236 30.1865 15.081C29.8632 14.2684 29.4353 13.4723 28.8581 12.8123C28.8311 12.7816 28.804 12.7508 28.7758 12.7177C28.1551 12.0151 27.3862 11.5171 26.5363 11.1386C26.5159 11.1292 26.4955 11.1197 26.4751 11.1103C26.1307 10.9541 25.7756 10.8678 25.4065 10.7909C25.3701 10.7826 25.3324 10.7755 25.2948 10.7672C23.4232 10.436 21.5258 11.4261 20.0175 12.4326C19.9952 12.4468 19.974 12.4622 19.9517 12.4764C19.646 12.6799 19.3556 12.8951 19.0711 13.127C19.0394 13.1518 19.0088 13.1778 18.9771 13.2038C18.8936 13.2724 18.8101 13.3422 18.7267 13.4108C18.6961 13.4369 18.6644 13.4629 18.6326 13.4889C18.2529 13.8059 17.8979 14.1477 17.5487 14.4978C17.5283 14.5183 17.508 14.5389 17.4876 14.5594C17.37 14.6788 17.2583 14.8006 17.149 14.9284C17.0667 15.023 16.9809 15.1129 16.8962 15.2052C16.7246 15.3897 16.5635 15.5813 16.406 15.7788C16.3754 15.8167 16.3449 15.8545 16.3131 15.8912C15.6771 16.6648 15.1175 17.4987 14.6179 18.3668C14.6014 18.3941 14.5862 18.4213 14.5697 18.4496C14.3746 18.7856 14.1888 19.1239 14.0195 19.4752C13.9901 19.5343 13.9607 19.5934 13.9302 19.6526C13.5504 20.3954 13.2413 21.1725 13.0214 21.9792C13.0132 22.0099 13.0038 22.0419 12.9956 22.0738C12.8733 22.5398 12.8133 22.9964 12.8169 23.4778C12.8169 23.5559 12.8169 23.6328 12.8169 23.7108C12.8169 24.3602 13.0214 24.9386 13.4682 25.4188C14.0125 25.9464 14.6837 26.3201 15.4032 26.5413C15.4514 26.5579 15.4996 26.5744 15.5478 26.591C15.5937 26.6064 15.6395 26.6217 15.6854 26.6359C15.7128 26.6454 15.7406 26.6549 15.7688 26.6643C16.1015 26.7731 16.4413 26.8465 16.7834 26.9198C16.8081 26.9257 16.8339 26.9305 16.8598 26.9364C17.2313 27.0168 17.6075 27.07 17.9837 27.1197C18.0095 27.1233 18.0354 27.1268 18.0613 27.1304C18.6338 27.2061 19.2063 27.2711 19.78 27.335C19.8623 27.3444 19.9446 27.3527 20.0269 27.3622C20.911 27.4604 21.7962 27.5526 22.6826 27.6402C25.1059 27.8791 26.7267 28.0597 27.5449 28.1819C27.5696 28.1854 27.5943 28.189 27.6202 28.1925C27.9799 28.2458 28.3244 28.3286 28.6723 28.4338C28.7017 28.4421 28.7311 28.4516 28.7617 28.461C29.5576 28.7071 30.3488 29.0714 30.7885 29.8248C31.1458 30.5073 31.2951 31.1602 31.2904 31.9302C31.2904 31.9598 31.2904 31.9906 31.2904 32.0213C31.2869 32.9143 31.2034 33.8287 30.9695 34.6921C30.9613 34.7229 30.953 34.7524 30.9448 34.7832C30.9201 34.8766 30.8943 34.9689 30.8696 35.0623C30.8613 35.0931 30.8531 35.1227 30.8449 35.1534C30.7602 35.4716 30.6744 35.778 30.5239 36.0725C30.5051 36.1127 30.4851 36.1529 30.4663 36.1931C30.0172 37.1264 29.279 37.7048 28.3126 38.0584C28.2444 38.0809 28.1762 38.1022 28.1092 38.1235C28.0787 38.1341 28.0493 38.146 28.0187 38.1578C27.6743 38.2808 27.3098 38.3056 26.9489 38.3447C26.9289 38.347 26.9089 38.3494 26.8889 38.353C26.6832 38.379 26.4787 38.3813 26.2706 38.3813C26.233 38.3813 26.1942 38.3813 26.1554 38.3813C26.0754 38.3813 25.9943 38.3813 25.9144 38.3813C25.7944 38.3813 25.6745 38.3813 25.5546 38.3825C24.8093 38.3849 24.0745 38.3352 23.3374 38.2252C23.3092 38.2213 23.281 38.2173 23.2528 38.2134C22.1242 38.0478 20.9251 37.7568 20.1985 36.7881C19.9799 36.4604 19.8846 36.108 19.7847 35.7318C19.7694 35.6762 19.7506 35.6218 19.7318 35.5686C19.3556 34.3254 19.5414 32.4779 20.1492 31.3282C20.2726 31.1034 20.4101 30.8976 20.5818 30.706C20.5994 30.6859 20.6171 30.6658 20.6347 30.6457C21.112 30.1359 21.8315 29.897 22.5145 29.8769C22.6462 29.8745 22.779 29.8733 22.9107 29.8745C22.9389 29.8745 22.9671 29.8745 22.9953 29.8745C23.5373 29.8745 24.0616 29.923 24.5965 30.0129C24.6282 30.0176 24.66 30.0235 24.6917 30.0283C25.3348 30.1383 25.9402 30.2968 26.4163 30.7699C26.4446 30.7959 26.4728 30.8219 26.5022 30.8491C27.1135 31.5328 27.2146 32.5772 27.1687 33.4537C27.1311 34.0333 26.9207 34.562 26.541 35.0008C26.5245 35.0198 26.508 35.0399 26.4916 35.06C26.1871 35.3947 25.7474 35.552 25.3042 35.5804C25.1855 35.5852 25.0679 35.5852 24.9504 35.584C24.8786 35.584 24.8069 35.584 24.7352 35.584C24.3296 35.584 23.9052 35.5556 23.5432 35.3545C23.522 35.3435 23.5008 35.332 23.4797 35.3202C23.3339 35.241 23.201 35.1582 23.0905 35.0328C23.0741 35.015 23.0576 34.9973 23.0412 34.9784C22.7202 34.5857 22.6791 34.1303 22.7132 33.6441C22.732 33.4774 22.7567 33.313 22.7837 33.1474C22.7896 33.1071 22.7966 33.0658 22.8037 33.0244C22.8519 32.7428 22.9118 32.4755 23.1446 32.2886C23.328 32.2011 23.549 32.2283 23.7348 32.2945C23.8841 32.4022 23.9476 32.4791 23.9934 32.6565C24.0075 32.8256 23.9605 32.9936 23.9229 33.1568C23.832 33.514 23.8096 33.8693 23.8559 34.2225C24.0369 34.4142 24.2732 34.4591 24.5271 34.4686C24.6318 34.4709 24.7352 34.4709 24.8399 34.4709C24.8751 34.4709 24.9104 34.4709 24.9468 34.4709C25.1945 34.4733 25.4316 34.4307 25.6581 34.3432C25.7274 34.2699 25.7839 34.1977 25.8379 34.1125C25.8556 34.0853 25.8732 34.0581 25.892 34.0297C26.0354 33.7471 26.0531 33.4821 26.0496 33.1675C26.0496 33.1273 26.0496 33.087 26.0496 33.0445C26.0413 32.5394 26.0049 31.9066 25.631 31.5281C25.2337 31.1673 24.6 31.1271 24.0933 31.055C24.0687 31.0514 24.044 31.0479 24.0181 31.0431C23.6642 30.9899 23.3104 30.984 22.9542 30.9816C22.9318 30.9816 22.9083 30.9816 22.886 30.9816C22.3581 30.9757 21.8338 31.0372 21.4376 31.4193C20.7758 32.1325 20.7299 33.2503 20.7276 34.1752C20.7276 34.2024 20.7276 34.2296 20.7276 34.258C20.7276 34.6957 20.7558 35.1132 20.8628 35.539C20.8675 35.5603 20.8733 35.5816 20.878 35.6041C20.985 36.0358 21.1872 36.315 21.5599 36.5527C22.3311 37.0105 23.254 37.137 24.1357 37.2044C24.2262 37.2115 24.3155 37.2198 24.4061 37.2293C25.2784 37.3073 26.2047 37.3452 27.0735 37.2115C27.1002 37.2076 27.1268 37.2036 27.1535 37.1997C27.7401 37.1145 28.2797 36.9229 28.7676 36.5799C28.7852 36.5681 28.8028 36.5562 28.8205 36.5432C29.2155 36.2712 29.3965 35.9495 29.5588 35.5059C29.5752 35.461 29.5929 35.4172 29.6117 35.3734C30.136 34.1173 30.5122 32.0343 29.9984 30.7238C29.7621 30.1596 29.3859 29.8769 28.8358 29.6509C26.9607 28.9247 24.6753 28.9614 22.6932 28.7674C19.2847 28.433 17.0197 28.1298 15.8981 27.8578C15.8276 27.8412 15.7559 27.8235 15.6854 27.8081C15.094 27.6626 14.4886 27.4509 13.9596 27.1434C13.9384 27.1315 13.9184 27.1197 13.8973 27.1067C12.992 26.5721 12.2914 25.8896 11.8893 24.9019C11.8776 24.8759 11.867 24.8499 11.8552 24.8239C11.8176 24.7174 11.7976 24.6098 11.7776 24.4998C11.7741 24.4785 11.7694 24.4584 11.7659 24.4359C11.5778 23.4057 11.7141 22.2607 12.0809 21.2849C12.1139 21.1973 12.1397 21.1098 12.1656 21.0199C12.2867 20.6201 12.4313 20.2262 12.6123 19.8501C12.6464 19.7791 12.6805 19.707 12.7134 19.6348C13.0391 18.937 13.3812 18.2474 13.7867 17.5933C13.8361 17.5129 13.8855 17.4312 13.9349 17.3496C14.1347 17.0184 14.3452 16.6979 14.5709 16.3833C14.6191 16.3147 14.6673 16.2461 14.7155 16.1775C14.893 15.9208 15.0764 15.6736 15.2774 15.4335C15.3186 15.3826 15.3585 15.3306 15.3985 15.2797C15.643 14.9722 15.8981 14.6776 16.1638 14.3902C16.232 14.3157 16.299 14.24 16.3649 14.1631C16.466 14.046 16.5741 13.9384 16.6835 13.8296C16.7458 13.7657 16.8022 13.7006 16.8586 13.632C16.8857 13.6013 16.9115 13.5705 16.9386 13.5398H17.0009V13.4771C17.0299 13.4479 17.0651 13.4164 17.1067 13.3824C17.2113 13.2937 17.3077 13.2003 17.4029 13.1021C17.5346 12.9673 17.6733 12.8478 17.8203 12.7295C17.899 12.6657 17.9766 12.5994 18.053 12.5332C18.8301 11.8613 19.6836 11.2936 20.5771 10.7933C20.5982 10.7814 20.6194 10.7696 20.6417 10.7566C21.132 10.481 21.6469 10.2515 22.1771 10.067C22.2053 10.0568 22.2339 10.0469 22.2629 10.0374C22.8848 9.82098 23.5467 9.627 24.2097 9.61635L24.2109 9.61517Z" fill="white"/>
+             <path d="M17.8177 32.4448C18.3033 33.1923 18.241 34.3598 18.0681 35.1913C18.0599 35.2315 18.0517 35.2729 18.0423 35.3143C17.8883 35.9589 17.5932 36.5515 17.1265 37.0223C17.1053 37.0448 17.083 37.0661 17.0618 37.0885C16.5587 37.5711 15.7992 37.829 15.1138 37.8266C14.0452 37.7876 13.1094 37.2056 12.3582 36.4853C12.3335 36.4628 12.3088 36.4392 12.283 36.4155C12.0102 36.1553 11.6046 35.6999 11.5635 35.3131C11.5705 35.2524 11.5854 35.2039 11.6081 35.1676C12.0666 34.8648 12.946 34.9464 13.4668 35.0352C14.2803 35.2126 14.9974 35.6703 15.6064 36.2262C15.6229 36.2404 15.6393 36.2558 15.6558 36.2712C15.7287 36.3398 15.7863 36.4013 15.8415 36.4853C15.8415 36.4569 15.8411 36.4281 15.8404 36.3989C15.8294 35.69 15.8611 35.1716 15.9356 34.8435C15.9438 34.8033 15.952 34.7631 15.9614 34.7229C16.126 34.0191 16.4916 33.391 17.003 32.8871C17.0277 32.8623 17.0524 32.8387 17.0771 32.8138C17.3976 32.5134 17.6445 32.3908 17.8177 32.446V32.4448Z" fill="white"/>
+          <path d="M14.8999 31.3814C15.2385 31.657 15.5054 31.9752 15.5583 32.4235C15.5924 32.8292 15.483 33.203 15.2244 33.5164C14.961 33.8015 14.6378 33.9363 14.2557 33.9529C13.9794 33.9588 13.7631 33.9197 13.5186 33.7802C13.4927 33.766 13.4668 33.7518 13.441 33.7364C13.1189 33.5377 12.9131 33.2384 12.8026 32.8753C12.7215 32.5075 12.7591 32.1443 12.9461 31.8131C13.1682 31.4713 13.468 31.2608 13.8654 31.1744C14.2145 31.1188 14.6013 31.178 14.8987 31.3802L14.8999 31.3814Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="footer-subscribe">
+          <p class="f-sub-title">SUBSCRIBE</p>
+          <p class="f-sub-desc">Enter your email to get notified about our new solution</p>
+          <div class="f-email">
+            <span>Email</span>
+            <svg width="18" height="14" viewBox="0 0 22 18" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="1" width="20" height="16" rx="2"/>
+              <path d="M1 4l10 5.5 10-5.5"/>
+            </svg>
+          </div>
+        </div>
+        <div class="footer-social">
+          <button class="social-btn" aria-label="Instagram">
+            <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="#f5f2eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="1" width="18" height="18" rx="4"/>
+              <circle cx="10" cy="10" r="3.5"/>
+              <circle cx="14.5" cy="5.5" r="0.7" fill="#f5f2eb" stroke="none"/>
+            </svg>
+          </button>
+          <button class="social-btn" aria-label="YouTube">
+            <svg width="17" height="13" viewBox="0 0 20 14" fill="none" stroke="#f5f2eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18.5 2.2A2.25 2.25 0 0 0 16.9.7C15.5.3 10 .3 10 .3S4.5.3 3.1.7A2.25 2.25 0 0 0 1.5 2.2C1.1 3.6 1.1 7 1.1 7s0 3.4.4 4.8A2.25 2.25 0 0 0 3.1 13.3C4.5 13.7 10 13.7 10 13.7s5.5 0 6.9-.4A2.25 2.25 0 0 0 18.5 11.8C18.9 10.4 18.9 7 18.9 7S18.9 3.6 18.5 2.2z"/>
+              <polygon points="8,9.5 8,4.5 13,7" fill="#f5f2eb" stroke="none"/>
+            </svg>
+          </button>
+          <button class="social-btn" aria-label="Twitter">
+            <svg width="17" height="14" viewBox="0 0 19 16" fill="none" stroke="#f5f2eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 1s-.6 1.75-1.67 2.83C17.67 12.5 8.5 18.5 1.33 13.75c1.84.08 3.67-.5 5-1.67-4.17-1.25-6.25-6.17-4.17-10C4 4.25 6.83 5.5 9.67 5.42 8.92 1.92 13-.08 15.5 2.25 16.42 2.25 18 1 18 1z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <p class="fcol-title">CONTACT US</p>
+        <p class="fcol-link"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0e666b6262617d786f7c61617a7d4e69636f6762206d6163">[email&#160;protected]</a></p>
+        <p class="fcol-link">01, Galaxy Hub, Lower Parcel,<br>Mumbai 400005</p>
+        <p class="fcol-link">+91 9844498444</p>
+      </div>
+
+      <!-- Policies -->
+      <div class="footer-col">
+        <p class="fcol-title">POLICIES</p>
+        <a class="fcol-link" href="../policies/index.html#return-refund">Return &amp; Refund</a>
+        <a class="fcol-link" href="../policies/index.html#shipping">Shipping</a>
+        <a class="fcol-link" href="../policies/index.html#privacy">Privacy</a>
+        <a class="fcol-link" href="../policies/index.html#terms">Terms &amp; Conditions</a>
+      </div>
+
+      <!-- Careers -->
+      <div class="footer-col">
+        <p class="fcol-title">CAREERS</p>
+          <a class="fcol-link" href="../../swaroot%20career%20-%20java/career%20form.html">Join Our Team</a>
+
+        <script src="../../assets/js/shared-shell.js"></script>
+      </div>
+
+    </div><!-- /footer-inner -->
+    <p class="footer-copy">Svaroots Inc. All rights reserved.</p>
+  </footer>
+  <script>
+    /* ── Mosaic rows: slide in from alternating sides on scroll ── */
+    (function () {
+      var rows = document.querySelectorAll('.mosaic-row');
+      rows.forEach(function (row, i) {
+        row.classList.add(i % 2 === 0 ? 'mosaic-row--slide-left' : 'mosaic-row--slide-right');
+      });
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('mosaic-row--visible');
+          } else {
+            entry.target.classList.remove('mosaic-row--visible');
+          }
+        });
+      }, { threshold: 0.15 });
+
+      rows.forEach(function (row) { observer.observe(row); });
+    })();
+  </script>
+  <script>
+  /* ── Threads of India: state data, dropdown, map swap, card update, connector line ── */
+  (function () {
+
+    var stateData = {
+      'Maharashtra': {
+        state: 'MAHARASHTRA', craft: 'Paithani',
+        desc: 'A luxurious silk saree woven in Paithan, Maharashtra, celebrated for its oblique square designs and vibrant peacock motifs.',
+        tags: 'Handcrafted · Cultural Legacy · Limited Edition',
+        btn: 'Design with Paithani',
+        map: 'maharashtra.png', logo: 'maharashtra logo.png',
+        mapDotX: 38, mapDotY: 62
+      },
+      'Karnataka': {
+        state: 'KARNATAKA', craft: 'Ilkal Saree',
+        desc: 'A distinctive handloom saree from Ilkal, Karnataka, known for its unique combination of cotton body and silk pallu with traditional thread work.',
+        tags: 'Handcrafted · Cultural Legacy · Limited Edition',
+        btn: 'Design with Ilkal',
+        map: 'karnataka.png', logo: 'maharashtra logo.png',
+        mapDotX: 35, mapDotY: 72
+      }
+    };
+
+    var allStates = [
+      'Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chhattisgarh',
+      'Goa','Gujarat','Haryana','Himachal Pradesh','Jharkhand','Karnataka',
+      'Kerala','Madhya Pradesh','Maharashtra','Manipur','Meghalaya','Mizoram',
+      'Nagaland','Odisha','Punjab','Rajasthan','Sikkim','Tamil Nadu','Telangana',
+      'Tripura','Uttar Pradesh','Uttarakhand','West Bengal',
+      'Andaman & Nicobar','Chandigarh','Dadra & Nagar Haveli','Daman & Diu',
+      'Delhi','Jammu & Kashmir','Ladakh','Lakshadweep','Puducherry'
+    ];
+
+    var section     = document.querySelector('.threads');
+    var card        = document.querySelector('.threads__card');
+    var mapImg      = document.getElementById('threadsMapImg');
+    var trigger     = document.getElementById('threadsSelectTrigger');
+    var dropdown    = document.getElementById('threadsDropdown');
+    var searchInput = document.getElementById('threadsSearchInput');
+    var list        = document.getElementById('threadsStateList');
+    var selectText  = document.getElementById('threadsSelectText');
+    var isOpen      = false;
+    var currentData = stateData['Maharashtra'];
+
+
+
+    function buildList(filter) {
+      list.innerHTML = '';
+      allStates.filter(function(s) {
+        return s.toLowerCase().indexOf(filter.toLowerCase()) > -1;
+      }).forEach(function(s) {
+        var li = document.createElement('li');
+        li.className = 'threads__state-item';
+        li.textContent = s;
+        if (!stateData[s]) li.classList.add('threads__state-item--disabled');
+        li.addEventListener('mousedown', function(e) {
+          e.preventDefault();
+          selectState(s);
+        });
+        list.appendChild(li);
+      });
+    }
+
+    function selectState(name) {
+      selectText.textContent = name;
+      closeDropdown();
+      var data = stateData[name];
+      if (!data) return;
+      currentData = data;
+      document.getElementById('threadsState').textContent     = data.state;
+      document.getElementById('threadsCraftName').textContent = data.craft;
+      document.getElementById('threadsCraftDesc').textContent = data.desc;
+      document.getElementById('threadsCraftTags').textContent = data.tags;
+      document.getElementById('threadsCraftBtn').textContent  = data.btn;
+      var logoImg = document.getElementById('threadsSwaLogo');
+      logoImg.src = data.logo;
+      logoImg.onerror = function() { logoImg.src = 'maharashtra logo.png'; };
+      mapImg.style.opacity = '0';
+      mapImg.src = data.map;
+      mapImg.onload = function() {
+        mapImg.style.opacity = '1';
+      };
+    }
+
+    function openDropdown() {
+      isOpen = true;
+      dropdown.classList.add('threads__dropdown--open');
+      trigger.classList.add('threads__select-trigger--open');
+      searchInput.value = '';
+      buildList('');
+      searchInput.focus();
+    }
+
+    function closeDropdown() {
+      isOpen = false;
+      dropdown.classList.remove('threads__dropdown--open');
+      trigger.classList.remove('threads__select-trigger--open');
+    }
+
+    trigger.addEventListener('click', function() { isOpen ? closeDropdown() : openDropdown(); });
+    searchInput.addEventListener('input', function() { buildList(this.value); });
+    document.addEventListener('click', function(e) {
+      if (!document.getElementById('threadsCustomSelect').contains(e.target)) closeDropdown();
+    });
+
+    buildList('');
+    if (mapImg.complete) {
+    } else {
+    }
+  })();
+  </script>
+
+
+  <script>
+    /* ── Reviews scroll animation ── */
+    (function() {
+      var section = document.querySelector('.reviews');
+      if (!section) return;
+      var done = false;
+      function check() {
+        if (done) return;
+        var rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.85) {
+          done = true;
+          section.classList.add('is-visible');
+          setTimeout(function() { section.classList.add('words-filled'); }, 1500);
+        }
+      }
+      window.addEventListener('scroll', check, { passive: true });
+      check();
+    })();
+  </script>
+</body>
+</html>

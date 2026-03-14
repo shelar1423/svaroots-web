@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Svaroots Policies</title>
+  <link rel="stylesheet" href="../../assets/css/shared-shell.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f5f2eb;
+      --card: #ffffff;
+      --text: #191919;
+      --muted: #5e5a57;
+      --border: #e5dfd4;
+      --accent: #0b5fff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Nunito Sans", "Gabarito", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .home-link {
+      color: #a42100;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+      line-height: 1.15;
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div data-global-nav-slot data-nav-root="../../" data-nav-current="home"></div>
+  <main class="wrap">
+    <div class="top">
+      <h1>Policies</h1>
+      <a class="home-link" href="../home/index.html">Back to Home</a>
+    </div>
+
+    <section class="card" id="return-refund">
+      <h2>Return &amp; Refund</h2>
+      <p>Products can be returned if they are unused and in original packaging within the stated return window. Refunds are issued after quality checks are complete.</p>
+    </section>
+
+    <section class="card" id="shipping">
+      <h2>Shipping</h2>
+      <p>Orders are dispatched after confirmation and may take additional time during high-demand periods. Tracking details are shared once the shipment is processed.</p>
+    </section>
+
+    <section class="card" id="privacy">
+      <h2>Privacy</h2>
+      <p>Personal information is used only for order processing, communication, and support. Customer information is not sold to third parties.</p>
+    </section>
+
+    <section class="card" id="terms">
+      <h2>Terms &amp; Conditions</h2>
+      <p>By using this site, customers agree to pricing, customization, and ordering terms listed on product pages and checkout steps.</p>
+    </section>
+  </main>
+  <script src="../../assets/js/shared-shell.js"></script>
+</body>
+</html>

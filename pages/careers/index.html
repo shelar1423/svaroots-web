@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Svaroots - Careers</title>
+<link href="../../assets/css/shared-shell.css" rel="stylesheet">
+<link href="career style.css" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --maroon: #8B2020;
+    --dark-maroon: #6B1818;
+    --navy: #1E2B3C;
+    --light-gray: #f5f5f5;
+    --white: #fff;
+    --text: #222;
+    --text-muted: #555;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    display: flex;
+    align-items: center;
+    padding: 14px 40px;
+    border-bottom: 1px solid #e8e8e8;
+    gap: 24px;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 100;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--maroon);
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .nav-logo svg { width: 32px; height: 32px; }
+  .nav-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 7px 16px;
+    flex: 1;
+    max-width: 220px;
+    font-size: 14px;
+    color: #888;
+  }
+  .nav-search svg { width: 14px; height: 14px; opacity: 0.5; }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-left: 12px;
+    list-style: none;
+    flex: 1;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .nav-links a .chevron { font-size: 10px; }
+  .nav-icons { display: flex; align-items: center; gap: 16px; margin-left: auto; }
+  .nav-icons span { font-size: 20px; cursor: pointer; }
+  .flag { width: 22px; height: 16px; background: linear-gradient(to bottom, #ff9933 33%, #fff 33% 66%, #138808 66%); border-radius: 2px; position: relative; }
+  .flag::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 8px; height: 8px; border: 1.5px solid #000080; border-radius: 50%; }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: #f9f7f5;
+    background-image: radial-gradient(circle at 10% 50%, rgba(139,32,32,0.04) 0%, transparent 50%), radial-gradient(circle at 90% 50%, rgba(139,32,32,0.04) 0%, transparent 50%);
+    padding: 60px 40px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+  }
+  /* decorative arrows pattern */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 38px, rgba(139,32,32,0.06) 38px, rgba(139,32,32,0.06) 40px),
+                      repeating-linear-gradient(90deg, transparent, transparent 38px, rgba(139,32,32,0.06) 38px, rgba(139,32,32,0.06) 40px);
+    pointer-events: none;
+  }
+  /* Arrow decorations */
+  .hero-arrows {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .arrow-deco {
+    position: absolute;
+    font-size: 28px;
+    color: rgba(139,32,32,0.12);
+    font-weight: 300;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 700;
+    color: var(--maroon);
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-image {
+    width: 240px;
+    height: 240px;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+  }
+  /* Circular team meeting illustration placeholder */
+  .hero-circle {
+    width: 220px;
+    height: 220px;
+    background: var(--maroon);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  /* Team meeting SVG fallback */
+  .team-svg { width: 200px; height: 200px; }
+
+  /* ─── SECTION COMMON ─── */
+  section { padding: 60px 80px; }
+  .section-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--maroon);
+    margin-bottom: 36px;
+  }
+
+  /* ─── TAGLINE ─── */
+  .tagline-section {
+    text-align: left;
+    padding: 48px 80px 24px;
+  }
+  .tagline-section .section-title { text-align: center; }
+  .tagline-body {
+    font-size: 14.5px;
+    line-height: 1.9;
+    color: var(--text);
+    margin-top: 12px;
+  }
+  .tagline-body p { margin-bottom: 2px; }
+
+  /* ─── VALUES GRID ─── */
+  .values-section { padding: 40px 80px 60px; }
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 60px;
+  }
+  .value-card { display: flex; flex-direction: column; gap: 10px; }
+  .value-icon {
+    width: 44px;
+    height: 44px;
+    color: var(--maroon);
+  }
+  .value-icon svg { width: 100%; height: 100%; }
+  .value-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--maroon);
+  }
+  .value-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  /* ─── TEAM PHOTOS ─── */
+  .team-section { padding: 40px 80px 60px; }
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px;
+  }
+  .team-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 4px;
+    background: #ddd;
+  }
+  .team-img-tall {
+    grid-row: 1 / 3;
+    height: 100%;
+    min-height: 450px;
+  }
+  .team-cta {
+    grid-column: 3;
+    grid-row: 2;
+    display: flex;
+    align-items: flex-end;
+    padding-top: 10px;
+  }
+  .team-cta a {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--maroon);
+    text-decoration: underline;
+    line-height: 1.3;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--navy);
+    color: #ccc;
+    padding: 60px 80px 30px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1.2fr 1fr 0.8fr;
+    gap: 40px;
+    padding-bottom: 40px;
+  }
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+  .footer-logo svg { width: 28px; height: 28px; }
+  .footer-subscribe-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .footer-subscribe-desc { font-size: 12px; color: #aaa; margin-bottom: 16px; line-height: 1.5; }
+  .footer-email-row {
+    display: flex;
+    border: 1px solid #444;
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 220px;
+  }
+  .footer-email-row input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 9px 12px;
+    color: #ccc;
+    font-size: 12px;
+    outline: none;
+  }
+  .footer-email-row input::placeholder { color: #666; }
+  .footer-email-row button {
+    background: transparent;
+    border: none;
+    border-left: 1px solid #444;
+    padding: 0 12px;
+    cursor: pointer;
+    color: #aaa;
+  }
+  .footer-social { display: flex; gap: 12px; margin-top: 28px; }
+  .footer-social a {
+    width: 32px; height: 32px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .footer-col h4 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #fff;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .footer-col p, .footer-col a {
+    font-size: 12.5px;
+    color: #aaa;
+    line-height: 2;
+    display: block;
+    text-decoration: none;
+  }
+  .footer-col a:hover { color: #fff; }
+  .footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: right;
+    font-size: 11px;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+<div data-global-nav-slot data-nav-root="../../" data-nav-current="careers"></div>
+
+<!-- NAV -->
+<nav style="display: none;">
+  <a href="../home/index.html" class="nav-logo">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="16" r="14" stroke="#8B2020" stroke-width="2"/>
+      <path d="M10 16 Q16 8 22 16 Q16 24 10 16Z" fill="#8B2020" opacity="0.6"/>
+      <circle cx="16" cy="16" r="3" fill="#8B2020"/>
+    </svg>
+    Svaroots
+  </a>
+  <div class="nav-search">
+    <svg viewBox="0 0 16 16" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="#888" stroke-width="1.5"/><path d="M10.5 10.5L14 14" stroke="#888" stroke-width="1.5" stroke-linecap="round"/></svg>
+    Search
+  </div>
+  <ul class="nav-links">
+    <li><a href="../build/index.html">Build Your Own <span class="chevron">▾</span></a></li>
+    <li><a href="../shop/gifting/plp.html">Shop <span class="chevron">▾</span></a></li>
+    <li><a href="../community/index.html">Community <span class="chevron">▾</span></a></li>
+    <li><a href="../roots/artisans/index.html">Our Roots <span class="chevron">▾</span></a></li>
+  </ul>
+  <div class="nav-icons">
+    <div class="flag"></div>
+    <span>🛍️</span>
+    <span>👤</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-arrows">
+    <!-- Arrow decorations on sides -->
+    <span class="arrow-deco" style="left:20px;top:30%">❯</span>
+    <span class="arrow-deco" style="left:48px;top:30%">❯</span>
+    <span class="arrow-deco" style="left:20px;top:55%">❯</span>
+    <span class="arrow-deco" style="left:48px;top:55%">❯</span>
+    <span class="arrow-deco" style="right:320px;top:30%">❮</span>
+    <span class="arrow-deco" style="right:292px;top:30%">❮</span>
+    <span class="arrow-deco" style="right:320px;top:55%">❮</span>
+    <span class="arrow-deco" style="right:292px;top:55%">❮</span>
+  </div>
+  <h1 class="hero-title">Careers</h1>
+  <div class="hero-image">
+    <!-- Team meeting top-view illustration using SVG -->
+    <svg class="team-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- Round table -->
+      <circle cx="100" cy="100" r="60" fill="#8B2020"/>
+      <!-- Laptop on table -->
+      <rect x="80" y="88" width="40" height="26" rx="3" fill="#222" opacity="0.7"/>
+      <rect x="83" y="91" width="34" height="18" rx="1" fill="#4a7fc1" opacity="0.8"/>
+      <!-- People around table (top view) -->
+      <!-- Top -->
+      <circle cx="100" cy="32" r="11" fill="#f0d0b0"/>
+      <path d="M88 43 Q100 38 112 43 L114 55 Q100 50 86 55Z" fill="#c85c30"/>
+      <!-- Top-right -->
+      <circle cx="152" cy="56" r="11" fill="#d4a080"/>
+      <path d="M141 65 Q153 58 163 67 L158 78 Q148 70 140 77Z" fill="#2266aa"/>
+      <!-- Right -->
+      <circle cx="170" cy="106" r="11" fill="#e8c0a0"/>
+      <path d="M158 107 Q162 96 172 96 L175 108 Q165 108 162 120Z" fill="#cc4444"/>
+      <!-- Bottom-right -->
+      <circle cx="148" cy="156" r="11" fill="#c0a080"/>
+      <path d="M138 148 Q149 143 159 150 L155 162 Q145 157 137 162Z" fill="#228844"/>
+      <!-- Bottom -->
+      <circle cx="100" cy="172" r="11" fill="#f5d5b5"/>
+      <path d="M89 163 Q100 159 111 163 L113 175 Q100 170 87 175Z" fill="#884422"/>
+      <!-- Bottom-left -->
+      <circle cx="52" cy="156" r="11" fill="#d0b090"/>
+      <path d="M42 150 Q53 143 63 150 L60 162 Q50 156 43 164Z" fill="#aa3366"/>
+      <!-- Left -->
+      <circle cx="32" cy="106" r="11" fill="#e0c0a0"/>
+      <path d="M26 96 Q36 96 40 107 L39 119 Q33 108 24 109Z" fill="#336699"/>
+      <!-- Top-left -->
+      <circle cx="50" cy="56" r="11" fill="#f0d5b5"/>
+      <path d="M40 67 Q50 58 62 65 L58 77 Q49 70 40 77Z" fill="#8B2020"/>
+    </svg>
+  </div>
+</div>
+
+<!-- TAGLINE -->
+<section class="tagline-section">
+  <h2 class="section-title">Not Just a Job. A Cultural Drop</h2>
+  <div class="tagline-body">
+    <p>We're building more than shoes</p>
+    <p>We're building a movement where Indian textiles meet modular design and tech.</p>
+    <p>If you want ownership, impact, and real creative responsibility, keep reading.</p>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values-section">
+  <h2 class="section-title">What You're Signing Up For</h2>
+  <div class="values-grid">
+
+    <div class="value-card">
+      <div class="value-icon">
+        <!-- Pencil/edit icon -->
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M28 8L36 16L18 34H10V26L28 8Z" stroke="#8B2020" stroke-width="2.2" stroke-linejoin="round" fill="none"/>
+          <path d="M24 12L32 20" stroke="#8B2020" stroke-width="2.2"/>
+        </svg>
+      </div>
+      <div class="value-title">Real Ownership</div>
+      <div class="value-desc">You won't wait for permission to lead. If you see it, you build it.</div>
+    </div>
+
+    <div class="value-card">
+      <div class="value-icon">
+        <!-- Loom/fabric icon -->
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="8" width="32" height="28" rx="2" stroke="#8B2020" stroke-width="2.2" fill="none"/>
+          <line x1="14" y1="8" x2="14" y2="36" stroke="#8B2020" stroke-width="1.8"/>
+          <line x1="22" y1="8" x2="22" y2="36" stroke="#8B2020" stroke-width="1.8"/>
+          <line x1="30" y1="8" x2="30" y2="36" stroke="#8B2020" stroke-width="1.8"/>
+          <line x1="6" y1="18" x2="38" y2="18" stroke="#8B2020" stroke-width="1.8"/>
+          <line x1="6" y1="26" x2="38" y2="26" stroke="#8B2020" stroke-width="1.8"/>
+        </svg>
+      </div>
+      <div class="value-title">Holistic Approach</div>
+      <div class="value-desc">From fabric to digital build flows, you see the whole picture.</div>
+    </div>
+
+    <div class="value-card">
+      <div class="value-icon">
+        <!-- Badge/star icon -->
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="22" cy="18" r="12" stroke="#8B2020" stroke-width="2.2" fill="none"/>
+          <path d="M22 12l2 4 4.5.7-3.3 3.2.8 4.6L22 22.3l-4 2.2.8-4.6L15.5 16.7l4.5-.7z" stroke="#8B2020" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+          <path d="M16 28l-3 8 9-4 9 4-3-8" stroke="#8B2020" stroke-width="2" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="value-title">Visible Impact</div>
+      <div class="value-desc">Your work ships. It doesn't sit in drafts.</div>
+    </div>
+
+    <div class="value-card">
+      <div class="value-icon">
+        <!-- People/creativity icon -->
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="7" stroke="#8B2020" stroke-width="2" fill="none"/>
+          <path d="M6 36c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="#8B2020" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M32 20c2 0 6 1 6 8" stroke="#8B2020" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <circle cx="32" cy="14" r="5" stroke="#8B2020" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+      <div class="value-title">Structured Creativity</div>
+      <div class="value-desc">We experiment, but with intention. No random chaos.</div>
+    </div>
+
+    <div class="value-card">
+      <div class="value-icon">
+        <!-- Bar chart icon -->
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="26" width="8" height="12" rx="1" fill="#8B2020"/>
+          <rect x="19" y="18" width="8" height="20" rx="1" fill="#8B2020"/>
+          <rect x="30" y="10" width="8" height="28" rx="1" fill="#8B2020"/>
+        </svg>
+      </div>
+      <div class="value-title">Accelerated Growth</div>
+      <div class="value-desc">The more you take on, the more you evolve.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEAM IN ACTION -->
+<section class="team-section">
+  <h2 class="section-title">Svaroots Team in Action</h2>
+  <div class="team-grid">
+    <!-- Col 1 -->
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=220&fit=crop" alt="Team meeting" class="team-img">
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=220&fit=crop" alt="Brainstorm" class="team-img">
+    </div>
+    <!-- Col 2 -->
+    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=450&fit=crop" alt="Team hands" class="team-img team-img-tall">
+    <!-- Col 3 -->
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=220&fit=crop" alt="Craft" class="team-img">
+      <div class="team-cta">
+        <a href="openings.html">Be Part of What We're Building</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" stroke="#fff" stroke-width="2"/>
+          <path d="M10 16 Q16 8 22 16 Q16 24 10 16Z" fill="#fff" opacity="0.7"/>
+          <circle cx="16" cy="16" r="3" fill="#fff"/>
+        </svg>
+        Svaroots
+      </div>
+      <div class="footer-subscribe-label">SUBSCRIBE</div>
+      <p class="footer-subscribe-desc">Enter your email to get notified about our new solution</p>
+      <div class="footer-email-row">
+        <input type="email" placeholder="Email">
+        <button>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="#aaa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#aaa" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#aaa" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="#aaa"/></svg>
+        </a>
+        <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 4s-2.7 1-4.2 1.1A5.5 5.5 0 0 0 2 9.5c0 .4 0 .8.1 1.2C4.7 10.5 7 9.3 8.8 7.4c-.1.8-.5 3.3 2.2 5.6-.8.1-3.5-.1-4.8-1.8 0 4 3.1 5.8 5.5 5.9-1 .9-3.2 2.2-6.7 1.5C7 20.5 9.3 22 12 22c9.6 0 14.9-8 14.9-14.9V7c1-.7 1.7-1.6 2.1-2.5C28 5 25.4 4.5 24 4.5l-2-.5z" stroke="#aaa" stroke-width="1.5" fill="none"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>hellosvaroots@gmail.com</p>
+      <p style="margin-top:12px">01, Galaxy Hub, Lower Parel,<br>Mumbai 400005</p>
+      <p style="margin-top:12px">+91 9844498444</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Policies</h4>
+      <a href="../policies/index.html#return-refund">Return &amp; Refund</a>
+      <a href="../policies/index.html#shipping">Shipping</a>
+      <a href="../policies/index.html#privacy">Privacy</a>
+      <a href="../policies/index.html#terms">Terms &amp; Conditions</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Careers</h4>
+      <a href="openings.html">Join Our Team</a>
+
+    <script src="../../assets/js/shared-shell.js"></script>
+    </div>
+  </div>
+
+  <div class="footer-bottom">Svaroots Inc. All rights reserved.</div>
+</footer>
+
+</body>
+</html>

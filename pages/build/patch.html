@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Svaroots | Build Your Patch</title>
+    <link rel="stylesheet" href="../../assets/css/shared-shell.css" />
+    <link rel="stylesheet" href="patch.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div data-global-nav-slot data-nav-root="../../" data-nav-current="patch-builder"></div>
+
+    <main class="patch-builder-wrap">
+      <section class="builder-top">
+        <div>
+          <p class="eyebrow">Build Studio</p>
+          <h1>Build Your Patch</h1>
+          <p>Choose a craft patch, preview it, and pair it with your sneaker build.</p>
+        </div>
+        <div class="builder-switch">
+          <a class="switch-btn" href="index.html">Build Your Shoe</a>
+          <a class="switch-btn active" href="patch.html">Build Your Patch</a>
+        </div>
+      </section>
+
+      <section class="builder-body">
+        <aside class="patch-panel">
+          <h2>Select Patch</h2>
+          <div class="patch-list" id="patch-list">
+            <button class="patch-option active" data-name="Apatani" data-img="../shop/gifting/ProductImg_1.png">Apatani</button>
+            <button class="patch-option" data-name="Gond art" data-img="../shop/gifting/ProductImg_2.png">Gond art</button>
+            <button class="patch-option" data-name="Paithani" data-img="../shop/gifting/ProductImg_3.png">Paithani</button>
+            <button class="patch-option" data-name="Kalamkari" data-img="../shop/gifting/ProductImg_4.png">Kalamkari</button>
+            <button class="patch-option" data-name="Shisha" data-img="../shop/gifting/ProductImg_5.png">Shisha</button>
+            <button class="patch-option" data-name="Rogan art" data-img="../shop/gifting/ProductImg_6.png">Rogan art</button>
+            <button class="patch-option" data-name="Mysore silk" data-img="../shop/gifting/ProductImg_7.png">Mysore silk</button>
+            <button class="patch-option" data-name="Gamusa" data-img="../shop/gifting/ProductImg_8.png">Gamusa</button>
+            <button class="patch-option" data-name="Sozni" data-img="../shop/gifting/motif_2.png">Sozni</button>
+            <button class="patch-option" data-name="Kasavu" data-img="../shop/gifting/motif_4.png">Kasavu</button>
+          </div>
+        </aside>
+
+        <section class="patch-preview">
+          <div class="preview-card">
+            <img id="patch-preview-image" src="../shop/gifting/ProductImg_1.png" alt="Selected patch" />
+          </div>
+          <h3 id="patch-preview-title">Apatani</h3>
+          <div class="preview-actions">
+            <a class="btn btn-outline" href="../shop/patches/plp.html">Explore All Patches</a>
+            <a class="btn btn-primary" href="../shop/gifting/cart-summary.html">Add to Cart</a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="../../assets/js/shared-shell.js"></script>
+    <script>
+      (function () {
+        var options = document.querySelectorAll('.patch-option');
+        var image = document.getElementById('patch-preview-image');
+        var title = document.getElementById('patch-preview-title');
+
+        options.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            options.forEach(function (node) { node.classList.remove('active'); });
+            btn.classList.add('active');
+
+            if (image) {
+              image.src = btn.getAttribute('data-img') || image.src;
+              image.alt = (btn.getAttribute('data-name') || 'Patch') + ' patch';
+            }
+
+            if (title) {
+              title.textContent = btn.getAttribute('data-name') || title.textContent;
+            }
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

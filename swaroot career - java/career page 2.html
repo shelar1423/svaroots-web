@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Svaroots - Careers</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="career page 2 style.css">
+<style>
+/* ── MAIN CONTENT AREA ── */
+main {
+  padding: 48px 60px 80px;
+  background: #fff;
+}
+
+.section-heading {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #A42100;
+  margin-bottom: 32px;
+}
+
+/* ── JOBS GRID ── */
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.stamp-wrap {
+  width: 100%;
+}
+
+/* ── NOT FINDING SECTION ── */
+.not-finding-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 420px;
+}
+
+.not-finding {
+  margin-bottom: 32px;
+}
+
+.not-finding h2 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #A42100;
+  margin-bottom: 12px;
+}
+
+.not-finding p {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  color: #A42100;
+  line-height: 1.7;
+}
+
+/* ── JOIN CARDS stacked vertically ── */
+.join-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: 420px;
+}
+
+.join-card {
+  background: #f5cdc2;
+  border-radius: 8px;
+  padding: 20px 24px;
+  width: 100%;
+}
+
+.join-card h3 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #A42100;
+  margin-bottom: 4px;
+}
+
+.join-card .subtitle {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #A42100;
+  margin-bottom: 10px;
+}
+
+.join-card p {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 13px;
+  color: #A42100;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.join-card a {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 13px;
+  color: #A42100;
+  text-decoration: underline;
+}
+
+.or-divider {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #A42100;
+  padding: 16px 0;
+}
+</style>
+</head>
+<body>
+<script src="careerpg2.js"></script>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="logo">
+    <img src="Header logo.png" alt="Svaroots">
+  </a>
+  <div class="search-bar">
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+    </svg>
+    <input type="text" placeholder="Search">
+  </div>
+  <div class="nav-links">
+    <a href="../vibha/index.html">Build Your Own <svg class="chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></a>
+    <a href="../HTML Practice/Svaroots_Giftingkits_PLP.html">Shop <svg class="chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></a>
+    <a href="../Combined (Homepage, Community)/community.html">Community <svg class="chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></a>
+    <a href="../vibha/artisans/index.html">Our Roots <svg class="chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></a>
+  </div>
+  <div class="nav-icons">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M0 17.9993C0 18.7066 0.280952 19.3849 0.781049 19.885C1.28115 20.3851 1.95942 20.666 2.66667 20.666H21.3333C22.0406 20.666 22.7189 20.3851 23.219 19.885C23.719 19.3849 24 18.7066 24 17.9993V14.666H0V17.9993Z" fill="#138808"/>
+      <path d="M24 9.33398V6.00065C24 5.29341 23.719 4.61513 23.219 4.11503C22.7189 3.61494 22.0406 3.33398 21.3333 3.33398H2.66667C1.95942 3.33398 1.28115 3.61494 0.781049 4.11503C0.280952 4.61513 0 5.29341 0 6.00065L0 9.33398H24Z" fill="#FF9933"/>
+      <path d="M0 9.11133H24V14.8893H0V9.11133Z" fill="#F7F7F7"/>
+      <path d="M11.9997 14.6673C13.4724 14.6673 14.6663 13.4734 14.6663 12.0007C14.6663 10.5279 13.4724 9.33398 11.9997 9.33398C10.5269 9.33398 9.33301 10.5279 9.33301 12.0007C9.33301 13.4734 10.5269 14.6673 11.9997 14.6673Z" fill="#000080"/>
+      <path d="M12.0004 12.5984C12.3318 12.5984 12.6004 12.3298 12.6004 11.9984C12.6004 11.6671 12.3318 11.3984 12.0004 11.3984C11.669 11.3984 11.4004 11.6671 11.4004 11.9984C11.4004 12.3298 11.669 12.5984 12.0004 12.5984Z" fill="#000080"/>
+    </svg>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <g clip-path="url(#clip0_3063_1786)">
+        <path d="M7.71484 7.28516V5.57087C7.71484 4.43423 8.16637 3.34414 8.9701 2.54041C9.77383 1.73669 10.8639 1.28516 12.0006 1.28516C13.1372 1.28516 14.2273 1.73669 15.031 2.54041C15.8347 3.34414 16.2863 4.43423 16.2863 5.57087V7.28516" stroke="#070100" stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M1.71484 17.5709C1.71484 14.0206 2.35256 11.1715 3.07942 8.52974C3.17871 8.17086 3.39328 7.85459 3.69006 7.62968C3.98683 7.40478 4.34934 7.28372 4.7217 7.28517H19.2794C20.044 7.28517 20.7194 7.7926 20.9217 8.52974C21.6486 11.1715 22.2863 14.0206 22.2863 17.5709C22.2863 20.1423 20.6183 21.8909 18.0006 22.3023C16.4766 22.5423 14.572 22.7137 12.0006 22.7137C9.42913 22.7137 7.52456 22.5423 6.00056 22.3023C3.38284 21.8909 1.71484 20.1423 1.71484 17.5709Z" stroke="#070100" stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <defs><clipPath id="clip0_3063_1786"><rect width="24" height="24" fill="white"/></clipPath></defs>
+    </svg>
+    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15.0388 1.47226C16.0254 2.28147 16.8013 3.21028 16.9503 4.51687C17.0416 5.69783 16.7154 6.78566 15.9544 7.69307C15.1765 8.51838 14.2274 8.90402 13.108 8.94657C12.2994 8.95767 11.6644 8.84195 10.9524 8.43222C10.8773 8.3897 10.8022 8.34718 10.7248 8.30338C9.78336 7.71885 9.18768 6.84314 8.87159 5.78399C8.63979 4.71079 8.75599 3.65646 9.31015 2.69522C9.96573 1.70426 10.8476 1.0963 12.0154 0.853512C13.0393 0.696536 14.1723 0.876115 15.0388 1.47226Z" stroke="#070100" stroke-width="1.6"/>
+      <path d="M12.8029 11.7386C3.32617 12.0913 0.797073 19.5944 0.799807 23.84C0.800096 24.2889 1.13518 24.6628 1.58112 24.7142C7.52448 25.3989 11.3776 20.174 12.7011 17.1573C12.738 17.0733 12.8614 17.0815 12.8933 17.1675C15.4306 24.0209 20.4419 24.9701 24.0124 24.6958C24.5297 24.6561 24.9056 24.1989 24.8561 23.6825C23.9497 14.2186 16.8138 11.7386 12.8029 11.7386Z" stroke="#070100" stroke-width="1.6"/>
+    </svg>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1 class="hero-title">Careers</h1>
+  <div class="hero-image">
+    <img src="round table.png">
+  </div>
+</section>
+
+<main>
+  <h2 class="section-heading">Current openings</h2>
+
+  <div class="jobs-grid">
+
+    <!-- Job Card 1 -->
+    <div class="stamp-wrap">
+      <svg width="100%" viewBox="0 0 289 454" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <mask id="m1">
+            <rect width="289" height="454" fill="white"/>
+            <circle cx="16" cy="0" r="11" fill="black"/><circle cx="45" cy="0" r="11" fill="black"/><circle cx="74" cy="0" r="11" fill="black"/><circle cx="103" cy="0" r="11" fill="black"/><circle cx="132" cy="0" r="11" fill="black"/><circle cx="161" cy="0" r="11" fill="black"/><circle cx="190" cy="0" r="11" fill="black"/><circle cx="219" cy="0" r="11" fill="black"/><circle cx="248" cy="0" r="11" fill="black"/><circle cx="277" cy="0" r="11" fill="black"/>
+            <circle cx="16" cy="454" r="11" fill="black"/><circle cx="45" cy="454" r="11" fill="black"/><circle cx="74" cy="454" r="11" fill="black"/><circle cx="103" cy="454" r="11" fill="black"/><circle cx="132" cy="454" r="11" fill="black"/><circle cx="161" cy="454" r="11" fill="black"/><circle cx="190" cy="454" r="11" fill="black"/><circle cx="219" cy="454" r="11" fill="black"/><circle cx="248" cy="454" r="11" fill="black"/><circle cx="277" cy="454" r="11" fill="black"/>
+            <circle cx="0" cy="16" r="11" fill="black"/><circle cx="0" cy="45" r="11" fill="black"/><circle cx="0" cy="74" r="11" fill="black"/><circle cx="0" cy="103" r="11" fill="black"/><circle cx="0" cy="132" r="11" fill="black"/><circle cx="0" cy="161" r="11" fill="black"/><circle cx="0" cy="190" r="11" fill="black"/><circle cx="0" cy="219" r="11" fill="black"/><circle cx="0" cy="248" r="11" fill="black"/><circle cx="0" cy="277" r="11" fill="black"/><circle cx="0" cy="306" r="11" fill="black"/><circle cx="0" cy="335" r="11" fill="black"/><circle cx="0" cy="364" r="11" fill="black"/><circle cx="0" cy="393" r="11" fill="black"/><circle cx="0" cy="422" r="11" fill="black"/>
+            <circle cx="289" cy="16" r="11" fill="black"/><circle cx="289" cy="45" r="11" fill="black"/><circle cx="289" cy="74" r="11" fill="black"/><circle cx="289" cy="103" r="11" fill="black"/><circle cx="289" cy="132" r="11" fill="black"/><circle cx="289" cy="161" r="11" fill="black"/><circle cx="289" cy="190" r="11" fill="black"/><circle cx="289" cy="219" r="11" fill="black"/><circle cx="289" cy="248" r="11" fill="black"/><circle cx="289" cy="277" r="11" fill="black"/><circle cx="289" cy="306" r="11" fill="black"/><circle cx="289" cy="335" r="11" fill="black"/><circle cx="289" cy="364" r="11" fill="black"/><circle cx="289" cy="393" r="11" fill="black"/><circle cx="289" cy="422" r="11" fill="black"/>
+          </mask>
+        </defs>
+        <rect width="289" height="454" fill="#f5cdc2" mask="url(#m1)"/>
+        <rect x="16" y="16" width="257" height="422" fill="none" stroke="#c0392b" stroke-width="2"/>
+        <line x1="128" y1="16" x2="128" y2="115" stroke="#c0392b" stroke-width="2"/>
+        <line x1="16" y1="115" x2="273" y2="115" stroke="#c0392b" stroke-width="2"/>
+        <line x1="16" y1="138" x2="273" y2="138" stroke="#c0392b" stroke-width="2"/>
+        <text x="26" y="38" font-family="Nunito Sans, sans-serif" font-size="11" font-weight="700" fill="#A42100">IND</text>
+        <text x="26" y="70" font-family="Nunito Sans, sans-serif" font-size="21" font-weight="700" fill="#A42100">Team</text>
+        <text x="26" y="96" font-family="Nunito Sans, sans-serif" font-size="21" font-weight="800" fill="#A42100">Design</text>
+        <text x="26" y="130" font-family="Nunito Sans, sans-serif" font-size="11" font-weight="500" fill="#A42100">F 40</text>
+        <text x="90" y="130" font-family="Nunito Sans, sans-serif" font-size="11" font-weight="500" fill="#A42100">UK 06</text>
+        <image href="shoe.png" x="134" y="22" width="128" height="88" preserveAspectRatio="xMidYMid meet"/>
+        <text x="26" y="162" font-family="Nunito Sans, sans-serif" font-size="20" font-weight="700" fill="#A42100">Sr. Product Designer</text>
+        <foreignObject x="22" y="172" width="244" height="190">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Nunito Sans, sans-serif; font-size: 14px; color: #A42100; line-height: 1.6; padding-top: 6px;">
+            Lead product thinking across UX, systems, and storytelling, shaping how culture becomes interactive.
+          </div>
+        </foreignObject>
+        <rect x="63" y="400" width="163" height="34" fill="white" stroke="#fff" rx="8"stroke-width="1.5"/>
+        <text x="144" y="417" font-family="Nunito Sans, sans-serif" font-size="13" font-weight="600" fill="#A42100" text-anchor="middle" dominant-baseline="middle">Apply Now</text>
+      </svg>
+    </div>
+
+    <!-- Job Card 2 -->
+    <div class="stamp-wrap">
+      <svg width="100%" viewBox="0 0 289 454" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <mask id="m2">
+            <rect width="289" height="454" fill="white"/>
+            <circle cx="16" cy="0" r="11" fill="black"/><circle cx="45" cy="0" r="11" fill="black"/><circle cx="74" cy="0" r="11" fill="black"/><circle cx="103" cy="0" r="11" fill="black"/><circle cx="132" cy="0" r="11" fill="black"/><circle cx="161" cy="0" r="11" fill="black"/><circle cx="190" cy="0" r="11" fill="black"/><circle cx="219" cy="0" r="11" fill="black"/><circle cx="248" cy="0" r="11" fill="black"/><circle cx="277" cy="0" r="11" fill="black"/>
+            <circle cx="16" cy="454" r="11" fill="black"/><circle cx="45" cy="454" r="11" fill="black"/><circle cx="74" cy="454" r="11" fill="black"/><circle cx="103" cy="454" r="11" fill="black"/><circle cx="132" cy="454" r="11" fill="black"/><circle cx="161" cy="454" r="11" fill="black"/><circle cx="190" cy="454" r="11" fill="black"/><circle cx="219" cy="454" r="11" fill="black"/><circle cx="248" cy="454" r="11" fill="black"/><circle cx="277" cy="454" r="11" fill="black"/>
+            <circle cx="0" cy="16" r="11" fill="black"/><circle cx="0" cy="45" r="11" fill="black"/><circle cx="0" cy="74" r="11" fill="black"/><circle cx="0" cy="103" r="11" fill="black"/><circle cx="0" cy="132" r="11" fill="black"/><circle cx="0" cy="161" r="11" fill="black"/><circle cx="0" cy="190" r="11" fill="black"/><circle cx="0" cy="219" r="11" fill="black"/><circle cx="0" cy="248" r="11" fill="black"/><circle cx="0" cy="277" r="11" fill="black"/><circle cx="0" cy="306" r="11" fill="black"/><circle cx="0" cy="335" r="11" fill="black"/><circle cx="0" cy="364" r="11" fill="black"/><circle cx="0" cy="393" r="11" fill="black"/><circle cx="0" cy="422" r="11" fill="black"/>
+            <circle cx="289" cy="16" r="11" fill="black"/><circle cx="289" cy="45" r="11" fill="black"/><circle cx="289" cy="74" r="11" fill="black"/><circle cx="289" cy="103" r="11" fill="black"/><circle cx="289" cy="132" r="11" fill="black"/><circle cx="289" cy="161" r="11" fill="black"/><circle cx="289" cy="190" r="11" fill="black"/><circle cx="289" cy="219" r="11" fill="black"/><circle cx="289" cy="248" r="11" fill="black"/><circle cx="289" cy="277" r="11" fill="black"/><circle cx="289" cy="306" r="11" fill="black"/><circle cx="289" cy="335" r="11" fill="black"/><circle cx="289" cy="364" r="11" fill="black"/><circle cx="289" cy="393" r="11" fill="black"/><circle cx="289" cy="422" r="11" fill="black"/>
+          </mask>
+        </defs>
+        <rect width="289" height="454" fill="#f5cdc2" mask="url(#m2)"/>
+        <rect x="16" y="16" width="257" height="422" fill="none" stroke="#c0392b" stroke-width="2"/>
+        <line x1="128" y1="16" x2="128" y2="115" stroke="#c0392b" stroke-width="2"/>
+        <line x1="16" y1="115" x2="273" y2="115" stroke="#c0392b" stroke-width="2"/>
+        <line x1="16" y1="138" x2="273" y2="138" stroke="#c0392b" stroke-width="2"/>
+        <text x="26" y="38" font-family="Nunito Sans, sans-serif" font-size="11" font-weight="700" fill="#A42100">IND</text>
+        <text x="26" y="70" font-family="Nunito Sans, sans-serif" font-size="21" font-weight="700" fill="#A42100">Team</text>
+        <text x="26" y="96" font-family="Nunito Sans, sans-serif" font-size="21" font-weight="800" fill="#A42100">Design</text>
+        <text x="26" y="130" font-family="Nunito Sans, sans-serif" font-size="11" font-weight="500" fill="#A42100">F 40</text>
+        <text x="90" y="130" font-family="Nunito Sans, sans-serif" font-size="11" font-weight="500" fill="#A42100">UK 06</text>
+        <image href="shoe.png" x="134" y="22" width="128" height="88" preserveAspectRatio="xMidYMid meet"/>
+        <text x="26" y="162" font-family="Nunito Sans, sans-serif" font-size="20" font-weight="700" fill="#A42100">Textile Researcher</text>
+        <foreignObject x="22" y="172" width="244" height="190">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Nunito Sans, sans-serif; font-size: 14px; color: #A42100; line-height: 1.6; padding-top: 6px;">
+            Document regional fabrics, decode motif systems, and build an authentic, structured material library for product integration.
+          </div>
+        </foreignObject>
+        <rect x="63" y="400" width="163" height="34" fill="white" stroke="#fff" rx="8"stroke-width="1.5"/>
+        <text x="144" y="417" font-family="Nunito Sans, sans-serif" font-size="13" font-weight="600" fill="#A42100" text-anchor="middle" dominant-baseline="middle">Apply Now</text>
+      </svg>
+    </div>
+
+    <!-- Job Card 3 -->
+    <div class="stamp-wrap">
+      <svg width="100%" viewBox="0 0 289 454" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <mask id="m3">
+            <rect width="289" height="454" fill="white"/>
+            <circle cx="16" cy="0" r="11" fill="black"/><circle cx="45" cy="0" r="11" fill="black"/><circle cx="74" cy="0" r="11" fill="black"/><circle cx="103" cy="0" r="11" fill="black"/><circle cx="132" cy="0" r="11" fill="black"/><circle cx="161" cy="0" r="11" fill="black"/><circle cx="190" cy="0" r="11" fill="black"/><circle cx="219" cy="0" r="11" fill="black"/><circle cx="248" cy="0" r="11" fill="black"/><circle cx="277" cy="0" r="11" fill="black"/>
+            <circle cx="16" cy="454" r="11" fill="black"/><circle cx="45" cy="454" r="11" fill="black"/><circle cx="74" cy="454" r="11" fill="black"/><circle cx="103" cy="454" r="11" fill="black"/><circle cx="132" cy="454" r="11" fill="black"/><circle cx="161" cy="454" r="11" fill="black"/><circle cx="190" cy="454" r="11" fill="black"/><circle cx="219" cy="454" r="11" fill="black"/><circle cx="248" cy="454" r="11" fill="black"/><circle cx="277" cy="454" r="11" fill="black"/>
+            <circle cx="0" cy="16" r="11" fill="black"/><circle cx="0" cy="45" r="11" fill="black"/><circle cx="0" cy="74" r="11" fill="black"/><circle cx="0" cy="103" r="11" fill="black"/><circle cx="0" cy="132" r="11" fill="black"/><circle cx="0" cy="161" r="11" fill="black"/><circle cx="0" cy="190" r="11" fill="black"/><circle cx="0" cy="219" r="11" fill="black"/><circle cx="0" cy="248" r="11" fill="black"/><circle cx="0" cy="277" r="11" fill="black"/><circle cx="0" cy="306" r="11" fill="black"/><circle cx="0" cy="335" r="11" fill="black"/><circle cx="0" cy="364" r="11" fill="black"/><circle cx="0" cy="393" r="11" fill="black"/><circle cx="0" cy="422" r="11" fill="black"/>
+            <circle cx="289" cy="16" r="11" fill="black"/><circle cx="289" cy="45" r="11" fill="black"/><circle cx="289" cy="74" r="11" fill="black"/><circle cx="289" cy="103" r="11" fill="black"/><circle cx="289" cy="132" r="11" fill="black"/><circle cx="289" cy="161" r="11" fill="black"/><circle cx="289" cy="190" r="11" fill="black"/><circle cx="289" cy="219" r="11" fill="black"/><circle cx="289" cy="248" r="11" fill="black"/><circle cx="289" cy="277" r="11" fill="black"/><circle cx="289" cy="306" r="11" fill="black"/><circle cx="289" cy="335" r="11" fill="black"/><circle cx="289" cy="364" r="11" fill="black"/><circle cx="289" cy="393" r="11" fill="black"/><circle cx="289" cy="422" r="11" fill="black"/>
+          </mask>
+        </defs>
+        <rect width="289" height="454" fill="#f5cdc2" mask="url(#m3)"/>
+        <rect x="16" y="16" width="257" height="422" fill="none" stroke="#c0392b" stroke-width="2"/>
+        <line x1="128" y1="16" x2="128" y2="115" stroke="#c0392b" stroke-width="2"/>
+        <line x1="16" y1="115" x2="273" y2="115" stroke="#c0392b" stroke-width="2"/>
+        <line x1="16" y1="138" x2="273" y2="138" stroke="#c0392b" stroke-width="2"/>
+        <text x="26" y="38" font-family="Nunito Sans, sans-serif" font-size="11" font-weight="700" fill="#A42100">IND</text>
+        <text x="26" y="70" font-family="Nunito Sans, sans-serif" font-size="21" font-weight="700" fill="#A42100">Team</text>
+        <text x="26" y="96" font-family="Nunito Sans, sans-serif" font-size="21" font-weight="800" fill="#A42100">Design</text>
+        <text x="26" y="130" font-family="Nunito Sans, sans-serif" font-size="11" font-weight="500" fill="#A42100">F 40</text>
+        <text x="90" y="130" font-family="Nunito Sans, sans-serif" font-size="11" font-weight="500" fill="#A42100">UK 06</text>
+        <image href="shoe.png" x="134" y="22" width="128" height="88" preserveAspectRatio="xMidYMid meet"/>
+        <text x="26" y="162" font-family="Nunito Sans, sans-serif" font-size="20" font-weight="700" fill="#A42100">Brand Strategist</text>
+        <foreignObject x="22" y="172" width="244" height="190">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Nunito Sans, sans-serif; font-size: 14px; color: #A42100; line-height: 1.6; padding-top: 6px;">
+            Shape cultural storytelling across digital platforms turning craft, process, &amp; product into compelling narratives.
+          </div>
+        </foreignObject>
+        <rect x="63" y="400" width="163" height="34" fill="white" stroke="#fff" rx="8"stroke-width="1.5"/>
+        <text x="144" y="417" font-family="Nunito Sans, sans-serif" font-size="13" font-weight="600" fill="#A42100" text-anchor="middle" dominant-baseline="middle">Apply Now</text>
+    </div>
+
+    <!-- Job Card 4 -->
+    <div class="stamp-wrap">
+      <svg width="100%" viewBox="0 0 289 454" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <mask id="m4">
+            <rect width="289" height="454" fill="white"/>
+            <circle cx="16" cy="0" r="11" fill="black"/><circle cx="45" cy="0" r="11" fill="black"/><circle cx="74" cy="0" r="11" fill="black"/><circle cx="103" cy="0" r="11" fill="black"/><circle cx="132" cy="0" r="11" fill="black"/><circle cx="161" cy="0" r="11" fill="black"/><circle cx="190" cy="0" r="11" fill="black"/><circle cx="219" cy="0" r="11" fill="black"/><circle cx="248" cy="0" r="11" fill="black"/><circle cx="277" cy="0" r="11" fill="black"/>
+            <circle cx="16" cy="454" r="11" fill="black"/><circle cx="45" cy="454" r="11" fill="black"/><circle cx="74" cy="454" r="11" fill="black"/><circle cx="103" cy="454" r="11" fill="black"/><circle cx="132" cy="454" r="11" fill="black"/><circle cx="161" cy="454" r="11" fill="black"/><circle cx="190" cy="454" r="11" fill="black"/><circle cx="219" cy="454" r="11" fill="black"/><circle cx="248" cy="454" r="11" fill="black"/><circle cx="277" cy="454" r="11" fill="black"/>
+            <circle cx="0" cy="16" r="11" fill="black"/><circle cx="0" cy="45" r="11" fill="black"/><circle cx="0" cy="74" r="11" fill="black"/><circle cx="0" cy="103" r="11" fill="black"/><circle cx="0" cy="132" r="11" fill="black"/><circle cx="0" cy="161" r="11" fill="black"/><circle cx="0" cy="190" r="11" fill="black"/><circle cx="0" cy="219" r="11" fill="black"/><circle cx="0" cy="248" r="11" fill="black"/><circle cx="0" cy="277" r="11" fill="black"/><circle cx="0" cy="306" r="11" fill="black"/><circle cx="0" cy="335" r="11" fill="black"/><circle cx="0" cy="364" r="11" fill="black"/><circle cx="0" cy="393" r="11" fill="black"/><circle cx="0" cy="422" r="11" fill="black"/>
+            <circle cx="289" cy="16" r="11" fill="black"/><circle cx="289" cy="45" r="11" fill="black"/><circle cx="289" cy="74" r="11" fill="black"/><circle cx="289" cy="103" r="11" fill="black"/><circle cx="289" cy="132" r="11" fill="black"/><circle cx="289" cy="161" r="11" fill="black"/><circle cx="289" cy="190" r="11" fill="black"/><circle cx="289" cy="219" r="11" fill="black"/><circle cx="289" cy="248" r="11" fill="black"/><circle cx="289" cy="277" r="11" fill="black"/><circle cx="289" cy="306" r="11" fill="black"/><circle cx="289" cy="335" r="11" fill="black"/><circle cx="289" cy="364" r="11" fill="black"/><circle cx="289" cy="393" r="11" fill="black"/><circle cx="289" cy="422" r="11" fill="black"/>
+          </mask>
+        </defs>
+        <rect width="289" height="454" fill="#f5cdc2" mask="url(#m4)"/>
+        <rect x="16" y="16" width="257" height="422" fill="none" stroke="#c0392b" stroke-width="2"/>
+        <line x1="128" y1="16" x2="128" y2="115" stroke="#c0392b" stroke-width="2"/>
+        <line x1="16" y1="115" x2="273" y2="115" stroke="#c0392b" stroke-width="2"/>
+        <line x1="16" y1="138" x2="273" y2="138" stroke="#c0392b" stroke-width="2"/>
+        <text x="26" y="38" font-family="Nunito Sans, sans-serif" font-size="11" font-weight="700" fill="#A42100">IND</text>
+        <text x="26" y="70" font-family="Nunito Sans, sans-serif" font-size="21" font-weight="700" fill="#A42100">Team</text>
+        <text x="26" y="96" font-family="Nunito Sans, sans-serif" font-size="21" font-weight="800" fill="#A42100">Design</text>
+        <text x="26" y="130" font-family="Nunito Sans, sans-serif" font-size="11" font-weight="500" fill="#A42100">F 40</text>
+        <text x="90" y="130" font-family="Nunito Sans, sans-serif" font-size="11" font-weight="500" fill="#A42100">UK 06</text>
+        <image href="shoe.png" x="134" y="22" width="128" height="88" preserveAspectRatio="xMidYMid meet"/>
+        <text x="26" y="162" font-family="Nunito Sans, sans-serif" font-size="20" font-weight="700" fill="#A42100">Footwear Designer</text>
+        <foreignObject x="22" y="172" width="244" height="190">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Nunito Sans, sans-serif; font-size: 14px; color: #A42100; line-height: 1.6; padding-top: 6px;">
+            Translate textile narratives into modular footwear concepts, balancing material innovation with wearability &amp; construction logic.
+          </div>
+        </foreignObject>
+        <rect x="63" y="400" width="163" height="34" fill="white" stroke="#fff" rx="8"stroke-width="1.5"/>
+        <text x="144" y="417" font-family="Nunito Sans, sans-serif" font-size="13" font-weight="600" fill="#A42100" text-anchor="middle" dominant-baseline="middle">Apply Now</text>
+      </svg>
+    </div>
+
+  </div><!-- /jobs-grid -->
+
+  <!-- NOT FINDING SECTION -->
+  <div class="not-finding-wrap">
+    <div class="not-finding">
+      <h2>Not Finding Your Role?</h2>
+      <p>Job descriptions are guidelines, Talent isn't.<br>
+         If you bring something valuable to the table, whether as a builder or an artist.<br>
+         Let's talk.</p>
+    </div>
+
+    <div class="join-section">
+      <div class="join-card">
+        <h3>Join as Artist</h3>
+        <div class="subtitle">For Independent Creators &amp; Craft Practitioners</div>
+        <p>If you create original artwork, textile patterns, motifs, or work within regional craft traditions so, this is your space.</p>
+        <a href="career form.html">Submit your Details.</a>
+      </div>
+
+      <div class="or-divider">Or</div>
+
+      <div class="join-card">
+        <h3>Join as Candidate</h3>
+        <div class="subtitle">For Designers, Strategists and Operators</div>
+        <p>If you want to help build product, systems, brand, or growth,</p>
+        <a href="career form.html">Submit your Details.</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo"><img src="footer logo.png"></div>
+      <div class="footer-subscribe-label">Subscribe</div>
+      <p class="footer-subscribe-desc">Enter your email to get notified about our new collections</p>
+      <div class="footer-email-row">
+        <input type="email" placeholder="Email">
+        <button>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M22 7L13.009 12.727C12.7039 12.9042 12.3573 12.9976 12.0045 12.9976C11.6517 12.9976 11.3051 12.9042 11 12.727L2 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 4H4C2.89543 4 2 4.89543 2 6V18C2 19.1046 2.89543 20 4 20H20C21.1046 20 22 19.1046 22 18V6C22 4.89543 21.1046 4 20 4Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><svg width="38" height="38" viewBox="0 0 38 38" fill="none"><path d="M1 9C1 4.58172 4.58172 1 9 1H29C33.4183 1 37 4.58172 37 9V29C37 33.4183 33.4183 37 29 37H9C4.58172 37 1 33.4183 1 29V9Z" stroke="#F5F2EB" stroke-width="2"/><path d="M23.1665 10.666H14.8332C12.532 10.666 10.6665 12.5315 10.6665 14.8327V23.166C10.6665 25.4672 12.532 27.3327 14.8332 27.3327H23.1665C25.4677 27.3327 27.3332 25.4672 27.3332 23.166V14.8327C27.3332 12.5315 25.4677 10.666 23.1665 10.666Z" stroke="#F5F2EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M23.5833 14.416H23.5916M22.3333 18.4743C22.4361 19.1679 22.3176 19.8762 21.9947 20.4985C21.6718 21.1209 21.1609 21.6255 20.5346 21.9407C19.9083 22.256 19.1986 22.3657 18.5064 22.2543C17.8142 22.1429 17.1747 21.8161 16.679 21.3203C16.1832 20.8245 15.8564 20.1851 15.745 19.4929C15.6336 18.8006 15.7433 18.0909 16.0585 17.4647C16.3737 16.8384 16.8784 16.3275 17.5007 16.0046C18.1231 15.6816 18.8314 15.5632 19.5249 15.666C20.2324 15.7709 20.8873 16.1006 21.393 16.6063C21.8987 17.112 22.2283 17.7669 22.3333 18.4743Z" stroke="#F5F2EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><svg width="38" height="38" viewBox="0 0 38 38" fill="none"><path d="M1 9C1 4.58172 4.58172 1 9 1H29C33.4183 1 37 4.58172 37 9V29C37 33.4183 33.4183 37 29 37H9C4.58172 37 1 33.4183 1 29V9Z" stroke="#F5F2EB" stroke-width="2"/><path d="M11.0835 23.1662C10.5008 20.419 10.5008 17.5801 11.0835 14.8329C11.16 14.5539 11.3077 14.2996 11.5123 14.0951C11.7169 13.8905 11.9711 13.7427 12.2501 13.6662C16.7197 12.9264 21.2805 12.9264 25.7501 13.6662C26.0291 13.7427 26.2834 13.8905 26.488 14.0951C26.6925 14.2996 26.8403 14.5539 26.9168 14.8329C27.4994 17.5801 27.4994 20.419 26.9168 23.1662C26.8403 23.4452 26.6925 23.6995 26.488 23.904C26.2834 24.1086 26.0291 24.2564 25.7501 24.3329C21.2805 25.0727 16.7197 25.0727 12.2501 24.3329C11.9711 24.2564 11.7169 24.1086 11.5123 23.904C11.3077 23.6995 11.16 23.4452 11.0835 23.1662Z" stroke="#F5F2EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.333 21.5L21.4997 19L17.333 16.5V21.5Z" stroke="#F5F2EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="https://x.com/" target="_blank" rel="noopener noreferrer"><svg width="38" height="38" viewBox="0 0 38 38" fill="none"><path d="M1 9C1 4.58172 4.58172 1 9 1H29C33.4183 1 37 4.58172 37 9V29C37 33.4183 33.4183 37 29 37H9C4.58172 37 1 33.4183 1 29V9Z" stroke="#F5F2EB" stroke-width="2"/><path d="M27.3337 12.3327C27.3337 12.3327 26.7503 14.0827 25.667 15.166C27.0003 23.4994 17.8337 29.5827 10.667 24.8327C12.5003 24.916 14.3337 24.3327 15.667 23.166C11.5003 21.916 9.41699 16.9994 11.5003 13.166C13.3337 15.3327 16.167 16.5827 19.0003 16.4994C18.2503 12.9994 22.3337 10.9994 24.8337 13.3327C25.7503 13.3327 27.3337 12.3327 27.3337 12.3327Z" stroke="#F5F2EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>hellosvaroots@gmail.com</p>
+      <p style="margin-top:12px">01, Galaxy Hub, Lower Parel,<br>Mumbai 400005</p>
+      <p style="margin-top:12px">+91 9844498444</p>
+    </div>
+    <div class="footer-col">
+      <h4>Policies</h4>
+      <a href="../pages/policies/index.html#return-refund">Return &amp; Refund</a>
+      <a href="../pages/policies/index.html#shipping">Shipping</a>
+      <a href="../pages/policies/index.html#privacy">Privacy</a>
+      <a href="../pages/policies/index.html#terms">Terms &amp; Conditions</a>
+    </div>
+    <div class="footer-col">
+      <h4>Careers</h4>
+      <a href="career form.html">Join Our Team</a>
+    </div>
+  </div>
+  <div class="footer-bottom">Svaroots Inc. All rights reserved.</div>
+</footer>
+
+</body>
+</html>

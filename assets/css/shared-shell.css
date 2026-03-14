@@ -1,0 +1,44 @@
+:root {
+  --shell-accent: #a42100;
+  --shell-accent-soft: rgba(164, 33, 0, 0.12);
+  --shell-text: #1f1b18;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--shell-text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  transition: box-shadow 160ms ease, background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--shell-accent-soft);
+  outline-offset: 2px;
+}
+
+a[aria-current="page"],
+a[aria-current="page"] .chevron,
+.menu-item[aria-current="page"],
+.nav-link[aria-current="page"] {
+  color: var(--shell-accent) !important;
+}
+
+.nav-link[aria-current="page"],
+.menu-item[aria-current="page"] {
+  font-weight: 800;
+}

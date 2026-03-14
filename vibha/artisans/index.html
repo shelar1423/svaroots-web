@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meet Our Artisans – Svaroots</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- HEADER / NAVBAR -->
+    <header class="navbar" role="banner">
+        <div class="navbar__left">
+            <a href="../../index.html" class="navbar__logo" aria-label="Svaroots Home">
+                <img src="../sneaker-customizer/assets/svarootslogo.png" alt="Svaroots Logo"
+                    style="height: 32px; width: auto;">
+            </a>
+        </div>
+
+        <div class="navbar__search">
+            <!-- <label for="search-input" class="sr-only">Search</label> -->
+            <div class="search-box">
+                <svg class="search-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.8" />
+                    <path d="M13 13L17 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+                <input id="search-input" type="text" class="search-input" placeholder="Search" />
+            </div>
+        </div>
+
+        <nav class="navbar__nav" aria-label="Main navigation">
+            <a href="../index.html" class="nav-link">Build Your Own <svg class="chevron" viewBox="0 0 12 12" fill="none">
+                    <path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg></a>
+            <a href="../../HTML Practice/Svaroots_Giftingkits_PLP.html" class="nav-link">Shop <svg class="chevron" viewBox="0 0 12 12" fill="none">
+                    <path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg></a>
+            <a href="../../Combined (Homepage, Community)/community.html" class="nav-link">Community <svg class="chevron" viewBox="0 0 12 12" fill="none">
+                    <path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg></a>
+            <div class="nav-dropdown" id="our-roots-dropdown">
+                <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">Our Roots <svg
+                        class="chevron" viewBox="0 0 12 12" fill="none">
+                        <path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg></button>
+                <div class="dropdown-menu" role="menu">
+                    <a href="index.html" class="dropdown-item" role="menuitem">Mission & Vision</a>
+                    <a href="index.html" class="dropdown-item" role="menuitem">Collaboration</a>
+                    <a href="index.html" class="dropdown-item" role="menuitem">Meet Our Artisans</a>
+                </div>
+            </div>
+            <a href="../../pages/home/index.html" class="nav-link nav-link--flag">
+                <img src="https://flagcdn.com/w20/in.png" width="20" height="14" alt="India" />
+                <svg class="chevron" viewBox="0 0 12 12" fill="none">
+                    <path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </a>
+        </nav>
+
+        <div class="navbar__icons">
+            <button class="icon-btn" aria-label="Cart">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" />
+                    <path d="M16 10a4 4 0 01-8 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <button class="icon-btn" aria-label="Account">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <button class="icon-btn mobile-menu-btn" aria-label="Menu" style="display: none;">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="container">
+            <!-- Breadcrumbs & Title -->
+            <div class="page-header">
+                <div class="breadcrumbs">
+                    <a href="../../index.html">Home</a> &gt; <a href="index.html">Our Roots</a> &gt; <span>Our Artisans</span>
+                </div>
+                <h1 class="page-title">The Hands Behind Our Soul</h1>
+            </div>
+
+            <!-- Hero Slider -->
+            <div class="hero-slider">
+                <button class="slider-btn slider-btn-left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                </button>
+                <img src="carouselImages/carousel1.png" alt="Artisan working" class="hero-image" />
+                <button class="slider-btn slider-btn-right">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6" />
+                    </svg>
+                </button>
+                <div class="slider-dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+
+            <!-- Artisan Stories -->
+            <section class="section">
+                <h2 class="section-title">Artisan Stories</h2>
+                <div class="stories-grid">
+                    <div class="story-card">
+                        <div class="story-image-wrap">
+                            <img src="stories/stories1.png" alt="Master Weaver" />
+                            <div class="play-btn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 3l14 9-14 9V3z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="story-title">The Master Weaver</h3>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-image-wrap">
+                            <img src="stories/stories2.png" alt="Block Printer" />
+                            <div class="play-btn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 3l14 9-14 9V3z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="story-title">The Hand Block Printer</h3>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-image-wrap">
+                            <img src="stories/stories3.png" alt="Handloom Expert" />
+                            <div class="play-btn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 3l14 9-14 9V3z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="story-title">The Handloom Expert</h3>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-image-wrap">
+                            <img src="stories/stories4.png" alt="Delicate Decorator" />
+                            <div class="play-btn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 3l14 9-14 9V3z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="story-title">The Delicate Decorator</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Craftsmanship Lab -->
+            <section class="section">
+                <h2 class="section-title">The Craftsmanship Lab</h2>
+
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label for="fabric-select">Fabric</label>
+                        <div class="custom-select-wrapper" id="fabric-custom-select">
+                            <button class="custom-select-toggle" type="button">
+                                <span class="custom-select-value">Kalamkari</span>
+                                <svg class="custom-select-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M18 15l-6-6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <div class="custom-select-menu">
+                                <button type="button" class="custom-select-item" data-value="patola">Patola</button>
+                                <button type="button" class="custom-select-item" data-value="kasavu">Kasavu</button>
+                                <button type="button" class="custom-select-item" data-value="ajrakh">Ajrakh</button>
+                                <button type="button" class="custom-select-item"
+                                    data-value="kalamkari">Kalamkari</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lab-grid">
+                    <!-- Row 1 -->
+                    <div class="lab-card">
+                        <img src="lab/lab1.png" alt="Authentic Origin" />
+                        <h3 class="lab-title">Authentic Origin</h3>
+                        <p class="lab-desc">Originally sourced from Andhra Pradesh & Telangana</p>
+                    </div>
+                    <div class="lab-card">
+                        <img src="lab/lab2.png" alt="Clock" />
+                        <h3 class="lab-title">Time-Honored Technique</h3>
+                        <p class="lab-desc">16 hours were spent into weaving the fabric</p>
+                    </div>
+                    <div class="lab-card">
+                        <img src="lab/lab3.png" alt="Plant" />
+                        <h3 class="lab-title">Eco-Conscious Design</h3>
+                        <p class="lab-desc">Crafted from 100% cotton using natural dyes</p>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="lab-card">
+                        <img src="lab/lab4.png" alt="Earth" />
+                        <h3 class="lab-title">Environmental Impact</h3>
+                        <p class="lab-desc">Choosing a pair of these sneakers saves 1,000 litres of water</p>
+                    </div>
+                    <div class="lab-card lab-card--icon">
+                        <img src="lab/lab5.png" alt="GI Tag" class="contain-img" />
+                        <h3 class="lab-title">Regional Varieties (GI Tag)</h3>
+                        <p class="lab-desc">Srikalahasti Kalamkari<br>Machalipatnam Kalamkari<br>Karuppur Kalamkari</p>
+                    </div>
+                    <div class="lab-card lab-card--icon">
+                        <img src="lab/lab6.png" alt="Barcode" class="contain-img" />
+                        <h3 class="lab-title">Uniquely Yours</h3>
+                        <p class="lab-desc">A unique serial ID ensuring your art is one-of-a-kind</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

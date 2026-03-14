@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Svaroots – Build Your Own Sneaker</title>
+  <meta name="description"
+    content="Design your own custom sneaker with Svaroots. Choose your size, base color, and add beautiful Indian art patches to create a one-of-a-kind shoe." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/shared-shell.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div data-global-nav-slot data-nav-root="../../" data-nav-current="build"></div>
+  <!-- ===================== HEADER / NAVBAR ===================== -->
+  <header class="navbar" role="banner" style="display: none;">
+    <div class="navbar__left">
+      <a href="../home/index.html" class="navbar__logo" aria-label="Svaroots Home">
+        <img src="sneaker-customizer/assets/svarootslogo.png" alt="Svaroots Logo" style="height: 32px; width: auto;">
+      </a>
+    </div>
+
+    <div class="navbar__search">
+      <label for="search-input" class="sr-only">Search</label>
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.8" />
+          <path d="M13 13L17 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+        <input id="search-input" type="text" class="search-input" placeholder="Search" />
+      </div>
+    </div>
+
+    <nav class="navbar__nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Build Your Own <svg class="chevron" viewBox="0 0 12 12" fill="none">
+          <path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg></a>
+      <a href="../shop/gifting/plp.html" class="nav-link">Shop <svg class="chevron" viewBox="0 0 12 12" fill="none">
+          <path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg></a>
+      <a href="../community/index.html" class="nav-link">Community <svg class="chevron" viewBox="0 0 12 12" fill="none">
+          <path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg></a>
+      <div class="nav-dropdown" id="our-roots-dropdown">
+        <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">Our Roots <svg
+            class="chevron" viewBox="0 0 12 12" fill="none">
+            <path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg></button>
+        <div class="dropdown-menu" role="menu">
+          <a href="../roots/artisans/index.html" class="dropdown-item" role="menuitem">Mission & Vision</a>
+          <a href="../roots/artisans/index.html" class="dropdown-item" role="menuitem">Collaboration</a>
+          <a href="../roots/artisans/index.html" class="dropdown-item" role="menuitem">Meet Our Artisans</a>
+        </div>
+      </div>
+      <a href="../home/index.html" class="nav-link nav-link--flag">
+        <img src="https://flagcdn.com/w20/in.png" width="20" height="14" alt="India" />
+        <svg class="chevron" viewBox="0 0 12 12" fill="none">
+          <path d="M3 5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </a>
+    </nav>
+
+    <div class="navbar__icons">
+      <button class="icon-btn" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round" />
+          <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          <path d="M16 10a4 4 0 01-8 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+      <button class="icon-btn" aria-label="Account">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+      <button class="icon-btn mobile-menu-btn" aria-label="Menu" style="display: none;">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== MAIN LAYOUT ===================== -->
+  <main class="builder-layout" role="main">
+
+    <!-- ===== LEFT SIDEBAR ===== -->
+    <aside class="sidebar sidebar--left" aria-label="Customization options">
+
+
+      <div class="sidebar-content">
+        <div class="sidebar-header">
+          <h2 class="sidebar-title">Customize</h2>
+          <button class="icon-btn-sm" id="layout-toggle-btn" aria-label="Toggle layout">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="9" y1="3" x2="9" y2="21"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Size Selection -->
+        <section class="option-section" aria-labelledby="size-label">
+          <h3 class="option-label" id="size-label">Select Size</h3>
+          <div class="gender-tabs" role="group" aria-label="Gender">
+            <button class="gender-tab gender-tab--active" id="men-tab" aria-pressed="true">Men</button>
+            <button class="gender-tab" id="women-tab" aria-pressed="false">Women</button>
+          </div>
+          <div class="size-grid" role="group" aria-label="Shoe sizes">
+            <button class="size-btn" aria-label="Size 3">3</button>
+            <button class="size-btn" aria-label="Size 4">4</button>
+            <button class="size-btn size-btn--active" aria-label="Size 5">5</button>
+            <button class="size-btn" aria-label="Size 6">6</button>
+            <button class="size-btn" aria-label="Size 7">7</button>
+            <button class="size-btn" aria-label="Size 8">8</button>
+            <button class="size-btn" aria-label="Size 9">9</button>
+            <button class="size-btn" aria-label="Size 10">10</button>
+          </div>
+          <a href="../shop/gifting/pdp.html" class="size-chart-link">Size chart</a>
+        </section>
+
+        <!-- Base Color Selection -->
+        <section class="option-section" aria-labelledby="color-label">
+          <h3 class="option-label" id="color-label">Select Shoe Color</h3>
+          <div class="color-grid" role="group" aria-label="Base colors">
+            <div class="color-swatch-wrapper">
+              <button class="color-swatch color-swatch--active" id="color-red" style="background:#C0392B;"
+                aria-label="Red" title="Red"></button>
+              <span class="color-name">Red</span>
+            </div>
+            <div class="color-swatch-wrapper">
+              <button class="color-swatch" id="color-blue" style="background:#1565C0;" aria-label="Blue"
+                title="Blue"></button>
+              <span class="color-name">Blue</span>
+            </div>
+            <div class="color-swatch-wrapper">
+              <button class="color-swatch" id="color-purple" style="background:#7B1FA2;" aria-label="Purple"
+                title="Purple"></button>
+              <span class="color-name">Purple</span>
+            </div>
+            <div class="color-swatch-wrapper">
+              <button class="color-swatch" id="color-green" style="background:#2E7D32;" aria-label="Green"
+                title="Green"></button>
+              <span class="color-name">Green</span>
+            </div>
+            <div class="color-swatch-wrapper">
+              <button class="color-swatch" id="color-orange" style="background:#E65100;" aria-label="Orange"
+                title="Orange"></button>
+              <span class="color-name">Orange</span>
+            </div>
+            <div class="color-swatch-wrapper">
+              <button class="color-swatch" id="color-yellow" style="background:#F9A825;" aria-label="Yellow"
+                title="Yellow"></button>
+              <span class="color-name">Yellow</span>
+            </div>
+            <div class="color-swatch-wrapper">
+              <button class="color-swatch" id="color-brown" style="background:#5D4037;" aria-label="Brown"
+                title="Brown"></button>
+              <span class="color-name">Brown</span>
+            </div>
+            <div class="color-swatch-wrapper">
+              <button class="color-swatch" id="color-pink" style="background:#EC407A;" aria-label="Pink"
+                title="Pink"></button>
+              <span class="color-name">Pink</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Category Selection -->
+        <section class="option-section" aria-labelledby="category-label">
+          <h3 class="option-label" id="category-label">Select Category</h3>
+          <div class="image-grid" role="group" aria-label="Categories">
+            <div class="image-item-wrapper">
+              <img src="sneaker-customizer/assets/category/   2026-02-25 at 19.31.57.jpeg"
+                class="image-item image-item--active" alt="Category 1">
+              <span class="image-name">Kalamkari</span>
+            </div>
+            <div class="image-item-wrapper">
+              <img src="sneaker-customizer/assets/category/   2026-02-25 at 19.32.55 (1).jpeg" class="image-item"
+                alt="Category 2">
+              <span class="image-name">Sozni</span>
+            </div>
+            <div class="image-item-wrapper">
+              <img src="sneaker-customizer/assets/category/   2026-02-25 at 19.32.55 (2).jpeg" class="image-item"
+                alt="Category 3">
+              <span class="image-name">Kasavu</span>
+            </div>
+            <div class="image-item-wrapper">
+              <img src="sneaker-customizer/assets/category/   2026-02-25 at 19.32.55 (3).jpeg" class="image-item"
+                alt="Category 4">
+              <span class="image-name">Gamusa</span>
+            </div>
+
+            <div class="image-item-wrapper">
+              <img src="sneaker-customizer/assets/category/   2026-02-25 at 19.32.56 (3).jpeg" class="image-item"
+                alt="Category 8">
+              <span class="image-name">Ajrakh</span>
+            </div>
+            <div class="image-item-wrapper">
+              <img src="sneaker-customizer/assets/category/   2026-02-25 at 19.32.56.jpeg" class="image-item"
+                alt="Category 9">
+              <span class="image-name">Paithani</span>
+            </div>
+          </div>
+          <a href="../shop/gifting/plp.html" class="size-chart-link">View more</a>
+        </section>
+
+        <!-- Motif Selection -->
+        <section class="option-section" aria-labelledby="motif-label">
+          <h3 class="option-label" id="motif-label">Select Motif</h3>
+          <div class="image-grid" role="group" aria-label="Motifs">
+            <div class="image-item-wrapper">
+              <img src="sneaker-customizer/assets/motif/   2026-02-25 at 19.32.55 (6).jpeg" class="image-item"
+                alt="Motif 7">
+              <span class="image-name">Kakkar Cloud</span>
+            </div>
+            <div class="image-item-wrapper">
+              <img src="sneaker-customizer/assets/motif/   2026-02-25 at 19.32.55 (7).jpeg"
+                class="image-item image-item--active" alt="Motif 8">
+              <span class="image-name">Suraj Mukhi</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Lace Selection -->
+        <section class="option-section" aria-labelledby="lace-label">
+          <h3 class="option-label" id="lace-label">Select Lace</h3>
+          <div class="image-grid" role="group" aria-label="Laces">
+            <div class="image-item-wrapper">
+              <img src="sneaker-customizer/assets/category/   2026-02-25 at 19.31.57.jpeg"
+                class="image-item image-item--active" alt="Category 1">
+              <span class="image-name">Kalamkari</span>
+            </div>
+            <div class="image-item-wrapper">
+              <img src="sneaker-customizer/assets/category/   2026-02-25 at 19.32.55 (1).jpeg" class="image-item"
+                alt="Category 2">
+              <span class="image-name">Sozni</span>
+            </div>
+            <div class="image-item-wrapper">
+              <img src="sneaker-customizer/assets/category/   2026-02-25 at 19.32.55 (2).jpeg" class="image-item"
+                alt="Category 3">
+              <span class="image-name">Kasavu</span>
+            </div>
+            <div class="image-item-wrapper">
+              <img src="sneaker-customizer/assets/category/   2026-02-25 at 19.32.55 (3).jpeg" class="image-item"
+                alt="Category 4">
+              <span class="image-name">Gamusa</span>
+            </div>
+            <div class="image-item-wrapper">
+              <img src="sneaker-customizer/assets/category/   2026-02-25 at 19.32.56 (3).jpeg" class="image-item"
+                alt="Category 8">
+              <span class="image-name">Ajrakh</span>
+            </div>
+            <div class="image-item-wrapper">
+              <img src="sneaker-customizer/assets/category/   2026-02-25 at 19.32.56.jpeg" class="image-item"
+                alt="Category 9">
+              <span class="image-name">Paithani</span>
+            </div>
+          </div>
+          <a href="../shop/gifting/plp.html" class="size-chart-link">View more</a>
+        </section>
+
+        <!-- Background Selection -->
+        <section class="option-section" aria-labelledby="bg-label">
+          <h3 class="option-label" id="bg-label">Change Background</h3>
+          <div class="bg-options" role="group" aria-label="Background options">
+            <button class="bg-btn bg-btn--add" id="bg-add-btn" aria-label="Add custom background">
+              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </button>
+            <button class="bg-btn bg-btn--gallery" id="bg-gallery-btn" aria-label="Choose from gallery">
+              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                <rect x="2" y="2" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5" />
+                <circle cx="7" cy="7" r="1.5" fill="currentColor" />
+                <path d="M2 13l5-4 4 3 3-3 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <button class="bg-btn bg-btn--color" id="bg-blue-btn" style="background:#1A5CE6;"
+              aria-label="Blue background"></button>
+            <button class="bg-btn bg-btn--color" id="bg-yellow-btn" style="background:#E6D600;"
+              aria-label="Yellow background"></button>
+          </div>
+        </section>
+
+        <!-- Save -->
+        <button class="save-btn" id="save-btn">Save</button>
+      </div>
+    </aside>
+
+    <!-- ===== CENTER CANVAS ===== -->
+    <section class="canvas-area" aria-label="Shoe preview">
+      <!-- Top controls -->
+      <div class="canvas-top">
+        <button class="reset-btn" id="reset-btn">Reset</button>
+        <a class="reset-btn" href="patch.html" style="text-decoration:none; display:inline-flex; align-items:center;">Build Your Patch</a>
+        <h1 class="canvas-title">Build Your Own Sneaker</h1>
+        <button class="tryon-btn" id="tryon-btn">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            aria-hidden="true" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 10a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-3l-2.5-3.5L11 17H5a2 2 0 0 1-2-2v-5z"></path>
+          </svg>
+          AR Try-On
+        </button>
+      </div>
+
+      <!-- Shoe display -->
+      <div class="shoe-stage" aria-label="Sneaker preview canvas">
+        <div class="shoe-shadow"></div>
+        <!-- Insole floating above shoe -->
+        <div class="shoe-insole" aria-hidden="true">
+          <svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg" width="120" height="60">
+            <ellipse cx="60" cy="30" rx="55" ry="25" fill="#E8D5B0" stroke="#C4A97A" stroke-width="1.5" />
+            <!-- Decorative pattern -->
+            <ellipse cx="60" cy="30" rx="48" ry="19" fill="none" stroke="#9B8B6E" stroke-width="0.8"
+              stroke-dasharray="3,2" />
+            <circle cx="40" cy="28" r="4" fill="none" stroke="#8B6E3E" stroke-width="1" />
+            <circle cx="80" cy="30" r="5" fill="none" stroke="#8B6E3E" stroke-width="1" />
+            <path d="M50 25 Q60 18 70 25 Q60 32 50 25Z" fill="#A0876B" opacity="0.5" />
+          </svg>
+        </div>
+        <!-- Main Shoe Image -->
+        <div class="shoe-placeholder" id="shoe-display" aria-label="Sneaker preview">
+          <img src="sneaker-customizer/assets/shoes/red.png" alt="Customizable Sneaker"
+            style="width: 100%; height: auto; object-fit: contain;">
+        </div>
+      </div>
+
+      <!-- Bottom canvas controls -->
+      <div class="canvas-bottom">
+        <div class="canvas-controls canvas-controls--left">
+          <button class="ctrl-btn" id="undo-btn" aria-label="Undo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" width="20" height="20">
+              <path d="M3 7v6h6" />
+              <path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13" />
+            </svg>
+          </button>
+          <button class="ctrl-btn" id="redo-btn" aria-label="Redo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" width="20" height="20">
+              <path d="M21 7v6h-6" />
+              <path d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7" />
+            </svg>
+          </button>
+        </div>
+        <div class="canvas-controls canvas-controls--right">
+          <button class="ctrl-btn" id="zoom-in-btn" aria-label="Zoom in">
+            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+              <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.5" />
+              <path d="M13 13l4 4M6.5 8.5h4M8.5 6.5v4" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" />
+            </svg>
+          </button>
+          <button class="ctrl-btn" id="zoom-out-btn" aria-label="Zoom out">
+            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+              <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.5" />
+              <path d="M13 13l4 4M6.5 8.5h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RIGHT SIDEBAR ===== -->
+    <aside class="sidebar sidebar--right" aria-label="Order summary">
+      <div class="summary-panel">
+        <h2 class="summary-title">Summary</h2>
+        <div class="summary-divider"></div>
+        <div class="summary-rows">
+          <div class="summary-row">
+            <span class="summary-label">Base Shoe:</span>
+            <span class="summary-price" id="base-price">₹3,500.00</span>
+          </div>
+          <div class="summary-row" style="margin-top: 14px;">
+            <span class="summary-label">Patch & Motif:</span>
+            <span class="summary-price" id="patch-price">₹700.00</span>
+          </div>
+          <div class="summary-divider" style="margin: 14px 0;"></div>
+          <div class="summary-row">
+            <span class="summary-label" style="font-weight: 600; font-size: 14px; color: var(--text-primary);">Total
+              Price:</span>
+            <span class="summary-price" id="total-price" style="font-size: 15px; font-weight: 700;">₹4,200.00</span>
+          </div>
+        </div>
+        <div class="summary-spacer"></div>
+        <div class="summary-actions">
+          <button class="action-btn action-btn--outline" id="add-to-cart-btn">Add to Cart</button>
+          <button class="action-btn action-btn--outline" id="buy-now-btn">Buy Now</button>
+        </div>
+        <button class="proceed-btn" id="proceed-btn">
+          Proceed to Pay
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            aria-hidden="true">
+            <path d="M5 10h10M11 6l4 4-4 4" stroke="white" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </aside>
+
+  </main>
+
+  <div class="ar-modal" id="ar-tryon-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="arTryOnTitle">
+    <div class="ar-modal__backdrop" data-ar-close="true"></div>
+    <section class="ar-modal__panel">
+      <header class="ar-modal__header">
+        <h2 id="arTryOnTitle">AR Try-On</h2>
+        <button class="ar-modal__close" id="ar-close-btn" type="button" aria-label="Close AR Try-On">&times;</button>
+      </header>
+      <p class="ar-modal__subtitle">Preview your design with camera access or use demo mode.</p>
+      <div class="ar-modal__camera-wrap" id="ar-camera-wrap">
+        <video id="ar-video" autoplay playsinline muted></video>
+        <div class="ar-modal__overlay-shoe" aria-hidden="true">
+          <img src="sneaker-customizer/assets/shoes/red.png" alt="" id="ar-shoe-overlay" />
+        </div>
+      </div>
+      <p class="ar-modal__hint" id="ar-status">Allow camera access to start AR preview.</p>
+      <div class="ar-modal__actions">
+        <button class="ar-btn ar-btn--ghost" id="ar-demo-btn" type="button">Use Demo Mode</button>
+        <button class="ar-btn ar-btn--primary" id="ar-start-btn" type="button">Start Camera</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="../../assets/js/shared-shell.js"></script>
+  <script src="test.js"></script>
+</body>
+
+</html>

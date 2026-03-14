@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Svaroots | Base Sneaker</title>
+    <link rel="stylesheet" href="../../../assets/css/shared-shell.css" />
+    <link rel="stylesheet" href="base-sneaker.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div data-global-nav-slot data-nav-root="../../../" data-nav-current="base-sneaker"></div>
+
+    <main class="base-wrap">
+      <header class="hero">
+        <p class="meta">Svaroots Brand Guidelines</p>
+        <h1>Base Sneaker Mockup</h1>
+      </header>
+
+      <section class="product-layout">
+        <div class="gallery">
+          <img id="main-sneaker" src="../../../pages/build/sneaker-customizer/assets/shoes/red.png" alt="Base sneaker red" />
+        </div>
+
+        <div class="details">
+          <p class="eyebrow">Base Sneaker PDP</p>
+          <h2>Classic Canvas Base Sneaker</h2>
+          <p>
+            A clean all-purpose base silhouette crafted for patch layering, gifting, and custom storytelling.
+          </p>
+
+          <div class="price-row">
+            <span>Price</span>
+            <strong>₹3,500.00</strong>
+          </div>
+
+          <h3>Color Variants</h3>
+          <div class="variant-grid" id="variant-grid">
+            <button class="variant active" data-img="../../../pages/build/sneaker-customizer/assets/shoes/red.png" data-name="Red">
+              <img src="../../../pages/build/sneaker-customizer/assets/shoes/red.png" alt="Red sneaker" />
+              <span>Red</span>
+            </button>
+            <button class="variant" data-img="../../../pages/build/sneaker-customizer/assets/shoes/blue.png" data-name="Blue">
+              <img src="../../../pages/build/sneaker-customizer/assets/shoes/blue.png" alt="Blue sneaker" />
+              <span>Blue</span>
+            </button>
+            <button class="variant" data-img="../../../pages/build/sneaker-customizer/assets/shoes/yellow.png" data-name="Yellow">
+              <img src="../../../pages/build/sneaker-customizer/assets/shoes/yellow.png" alt="Yellow sneaker" />
+              <span>Yellow</span>
+            </button>
+            <button class="variant" data-img="../../../pages/build/sneaker-customizer/assets/shoes/green.png" data-name="Green">
+              <img src="../../../pages/build/sneaker-customizer/assets/shoes/green.png" alt="Green sneaker" />
+              <span>Green</span>
+            </button>
+          </div>
+
+          <div class="actions">
+            <a class="btn btn-outline" href="../gifting/plp.html">Continue Shopping</a>
+            <a class="btn btn-primary" href="../gifting/cart-summary.html">Add to Cart</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="../../../assets/js/shared-shell.js"></script>
+    <script>
+      (function () {
+        var main = document.getElementById('main-sneaker');
+        var variants = document.querySelectorAll('.variant');
+
+        variants.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            variants.forEach(function (node) { node.classList.remove('active'); });
+            btn.classList.add('active');
+            var nextImage = btn.getAttribute('data-img');
+            var nextName = btn.getAttribute('data-name') || 'Base sneaker';
+            if (main && nextImage) {
+              main.src = nextImage;
+              main.alt = 'Base sneaker ' + nextName.toLowerCase();
+            }
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

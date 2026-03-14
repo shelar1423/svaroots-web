@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Svaroots | Payment Success</title>
+    <link rel="stylesheet" href="../../../assets/css/shared-shell.css" />
+    <link rel="stylesheet" href="post-payment.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div data-global-nav-slot data-nav-root="../../../" data-nav-current="gifting"></div>
+
+    <main class="postpay-wrap">
+      <div class="back-link" onclick="window.location.href='plp.html'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M6 8L2 12M2 12L6 16M2 12H22" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to shopping
+      </div>
+
+      <h1 class="page-title">Order Confirmed</h1>
+
+      <div class="checkout-steps">
+        <div class="step active">
+          <div class="step-circle done">&#10003;</div>
+          <p>Cart</p>
+        </div>
+        <div class="step-line"></div>
+        <div class="step active">
+          <div class="step-circle done">&#10003;</div>
+          <p>Address</p>
+        </div>
+        <div class="step-line"></div>
+        <div class="step active">
+          <div class="step-circle done">&#10003;</div>
+          <p>Payment</p>
+        </div>
+      </div>
+
+      <section class="success-card" aria-live="polite">
+        <div class="badge">Payment Successful</div>
+        <h2>Thank you for your purchase</h2>
+        <p id="success-message">
+          Your Svaroots order has been received. This is a prototype confirmation page and no real payment gateway was used.
+        </p>
+
+        <div class="order-grid">
+          <div class="order-row">
+            <span>Order ID</span>
+            <strong id="order-id">SVR-000000</strong>
+          </div>
+          <div class="order-row">
+            <span>Payment Method</span>
+            <strong id="payment-method">Credit Card</strong>
+          </div>
+          <div class="order-row">
+            <span>Amount</span>
+            <strong>₹4,200.00</strong>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-outline" href="plp.html">Continue Shopping</a>
+          <a class="btn btn-primary" href="../../home/index.html">Go to Home</a>
+        </div>
+        <p class="career-note">Want to work with us? <a href="../../../swaroot%20career%20-%20java/career%20form.html">Join Our Team</a></p>
+      </section>
+    </main>
+
+    <script src="../../../assets/js/shared-shell.js"></script>
+    <script>
+      (function () {
+        var payment = null;
+        var paymentMethodNode = document.getElementById('payment-method');
+        var orderIdNode = document.getElementById('order-id');
+
+        try {
+          payment = JSON.parse(localStorage.getItem('svarootsCheckoutPayment') || '{}');
+        } catch (err) {
+          payment = {};
+        }
+
+        var methodMap = {
+          'credit-card': 'Credit Card',
+          netbanking: 'Net Banking',
+          upi: 'UPI',
+          paypal: 'PayPal'
+        };
+
+        if (paymentMethodNode) {
+          var methodLabel = methodMap[payment && payment.method] || 'Credit Card';
+          paymentMethodNode.textContent = methodLabel;
+        }
+
+        if (orderIdNode) {
+          var stamp = Date.now().toString().slice(-6);
+          orderIdNode.textContent = 'SVR-' + stamp;
+        }
+      })();
+    </script>
+  </body>
+</html>

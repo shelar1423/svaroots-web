@@ -1,0 +1,154 @@
+:root {
+  --care-bg: #f5f2eb;
+  --care-card: #ffffff;
+  --care-text: #070100;
+  --care-muted: #565252;
+  --care-border: #cdcccc;
+  --care-brand: #a42100;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  background: var(--care-bg);
+  color: var(--care-text);
+}
+
+.care-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 56px;
+}
+
+.hero .meta {
+  margin: 0;
+  font-size: 13px;
+  color: var(--care-muted);
+}
+
+.hero h1 {
+  margin: 10px 0 0;
+  font-size: 48px;
+  line-height: 1.08;
+  color: var(--care-brand);
+}
+
+.care-layout {
+  margin-top: 22px;
+  border: 1px solid var(--care-border);
+  border-radius: 18px;
+  background: var(--care-card);
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.hero-product {
+  border: 1px solid #ece7de;
+  border-radius: 14px;
+  background: #fbf8f2;
+  padding: 14px;
+}
+
+.hero-product > img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.mini-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.mini-grid img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #ece7de;
+}
+
+.content .eyebrow {
+  margin: 0;
+  color: var(--care-muted);
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.content h2 {
+  margin: 8px 0;
+  font-size: 34px;
+}
+
+.content p {
+  margin: 0;
+  color: var(--care-muted);
+  line-height: 1.6;
+}
+
+.price-row {
+  margin-top: 16px;
+  padding: 12px 0;
+  border-top: 1px solid #ece7de;
+  border-bottom: 1px solid #ece7de;
+  display: flex;
+  justify-content: space-between;
+}
+
+.price-row strong {
+  color: var(--care-brand);
+  font-size: 24px;
+}
+
+.feature-list {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  color: #3f3c39;
+  line-height: 1.8;
+}
+
+.actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.btn-outline {
+  color: #333;
+  border: 1px solid var(--care-border);
+}
+
+.btn-primary {
+  color: #fff;
+  background: var(--care-brand);
+  border: 1px solid var(--care-brand);
+}
+
+@media (max-width: 900px) {
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .care-layout {
+    grid-template-columns: 1fr;
+  }
+}
