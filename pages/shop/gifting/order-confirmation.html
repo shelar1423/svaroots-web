@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmed | Svaroots</title>
+    <link rel="stylesheet" href="../../../assets/css/shared-shell.css" />
+    <style>
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: "Nunito Sans", sans-serif;
+        background: #f5f2eb;
+        color: #070100;
+      }
+
+      .confirm-wrap {
+        max-width: 900px;
+        margin: 40px auto 80px;
+        padding: 0 20px;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #070100;
+        font-size: 16px;
+        margin-bottom: 20px;
+        cursor: pointer;
+      }
+
+      .confirm-card {
+        background: #fff;
+        border: 1px solid #e6e6e6;
+        border-radius: 14px;
+        padding: 36px;
+        box-shadow: 0 8px 28px rgba(7, 1, 0, 0.08);
+      }
+
+      .confirm-badge {
+        width: 64px;
+        height: 64px;
+        border-radius: 999px;
+        background: #2e7d32;
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 34px;
+        font-weight: 700;
+        color: #a42100;
+      }
+
+      p {
+        margin: 10px 0;
+        font-size: 16px;
+      }
+
+      .meta {
+        margin-top: 24px;
+        padding: 16px;
+        background: #faf8f3;
+        border-radius: 10px;
+      }
+
+      .meta-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 8px 0;
+        border-bottom: 1px dashed #d6d6d6;
+      }
+
+      .meta-row:last-child {
+        border-bottom: 0;
+      }
+
+      .cta {
+        margin-top: 24px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        background: #a42100;
+        color: #fff;
+        border-radius: 8px;
+        padding: 12px 18px;
+        font-weight: 600;
+      }
+
+      @media (max-width: 640px) {
+        .confirm-card {
+          padding: 24px;
+        }
+
+        h1 {
+          font-size: 28px;
+        }
+
+        .meta-row {
+          flex-direction: column;
+          gap: 4px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div data-global-nav-slot data-nav-root="../../../" data-nav-current="gifting"></div>
+
+    <main class="confirm-wrap">
+      <div class="back-link">Go back to shopping</div>
+
+      <section class="confirm-card">
+        <div class="confirm-badge">✓</div>
+        <h1>Order Confirmed</h1>
+        <p>Your payment was completed successfully and your order is now in processing.</p>
+
+        <div class="meta">
+          <div class="meta-row">
+            <strong>Order ID</strong>
+            <span data-order-id>SVR00000000</span>
+          </div>
+          <div class="meta-row">
+            <strong>Placed On</strong>
+            <span data-order-date>--</span>
+          </div>
+        </div>
+
+        <a class="cta" href="plp.html">Continue Shopping</a>
+      </section>
+    </main>
+
+    <script src="../../../assets/js/shared-shell.js"></script>
+    <script src="../../../assets/js/gifting-checkout.js"></script>
+  </body>
+</html>
